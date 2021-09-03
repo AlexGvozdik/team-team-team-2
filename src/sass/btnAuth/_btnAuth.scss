@@ -1,0 +1,45 @@
+.btn-authentication {
+  position: absolute;
+  top: 16px;
+  left: 65%;
+  transform: translate(-50%);
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  border: 2px solid #ff6b08;
+  border-radius: 4px;
+  background-color: #ff6b08;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-authentication {
+    position: absolute;
+    top: 40px;
+    left: 60%;
+    border: 3px solid #ff6b08;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .btn-authentication {
+    font-size: 15px;
+    left: 70%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .btn-authentication {
+    font-size: 15px;
+    left: 60%;
+  }
+}
+
+.btn-authentication:hover {
+  background-color: white;
+  color: #ff6b08;
+}

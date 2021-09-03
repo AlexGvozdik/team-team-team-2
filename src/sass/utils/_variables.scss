@@ -1,0 +1,29 @@
+:root {
+  --text-main: 'Roboto', sans-serif;
+  --text-bold: 500;
+  --text-normal: 400;
+  --border-radius: 5px;
+  --text-big-letters: uppercase;
+  --text-starts-from-big-letter: capitalize;
+  --main-text-size: 12px;
+  --logo-text-size-and-modal-header: 30px;
+  --secondary-active-color: #ff6b08;
+  --main-active-color: #ff6b01;
+  --main-white-color: #ffffff;
+  --background-transparent-color: transparent;
+  --main-black-color: #000000;
+  --for-pagination-footer-votes-background-color: #f7f7f7;
+  --search-and-footer-mobile-text-size: 14px;
+
+  --header-logo-svg-fill: #818181;
+  --header-search-unsuccessful-color: #ff001b;
+
+  --modal-backdrop-color: rgba(0, 0, 0, 0.25);
+  --modal-category-and-slash-color: #8c8c8c;
+
+  --footer-text-size-pc-tablet: 16px;
+  --footer-text-color: #545454;
+
+  --dark-theme-background-color: #333333;
+  --light-theme-background-color: #ffffff;
+}

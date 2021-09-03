@@ -1,13 +1,14 @@
 import AuthService from './authService';
-import axios from 'axios';
+import fetchAPI from '../services/movies-api';
 // 'https://events-ecec8-default-rtdb.firebaseio.com/'
 const auth = new AuthService();
-import { fetchTrandingMovies,fetchMovie,fetchMovieDetails } from '../services/movies-api';
-async function log() {
-   await fetchMovieDetails(616651).then(console.log);
-   await fetchTrandingMovies().then(console.log);
-}
-log()
+// async function foo() {
+//         const trends = await fetchAPI.fetchTrandingMovies().then(data => {
+//       return data.results;
+//         });
+//     console.log(trends)
+// }
+// foo()
 const refs = {
     btnOpenModalAuthentication: document.querySelector('.btn-authentication'),
     btnClose: document.querySelector('[data-modal-window-close-authentication]'),

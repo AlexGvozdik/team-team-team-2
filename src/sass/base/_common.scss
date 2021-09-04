@@ -8,6 +8,7 @@ p {
   margin: 0;
 }
 
+<<<<<<< Updated upstream
 img {
   display: block;
   max-width: 100%;
@@ -33,10 +34,25 @@ body.modal-open {
 
 button {
   cursor: pointer;
+=======
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+}
+
+.link {
+  text-decoration: none;
+>>>>>>> Stashed changes
 }
 
 .list {
   list-style: none;
+<<<<<<< Updated upstream
   margin: 0;
   padding: 0;
 }
@@ -45,3 +61,6 @@ button {
   display: block;
   text-decoration: none;
 }
+=======
+}
+>>>>>>> Stashed changes

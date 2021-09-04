@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @import './reset';
 @import './base-styles';
 @import './modal-footer';
@@ -13,3 +14,15 @@
 @import './layouts/modal-content';
 @import './layouts/modal';
 @import './layouts/movie-cards';
+=======
+/*
+ * Главный файл стилей.
+ * Все паршалы подключаются сюда.
+ */
+
+// Стили для файла с примером HTML-фрагмента
+
+/* ===========LAYOUT============================ */
+@import './layout/header';
+@import './base/common';
+>>>>>>> Stashed changes

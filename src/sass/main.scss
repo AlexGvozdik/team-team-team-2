@@ -1,4 +1,5 @@
-@import  './btn-authentication/btn-authentication';
+@import './utils/variables';
+@import './btn-authentication/btn-authentication';
 @import './modal-authentication/modal-authentication';
 @import './layouts/gallery-card';
 @import './footer';
@@ -9,5 +10,3 @@
 @import './layouts/modal-content';
 @import './layouts/modal';
 @import './layouts/movie-cards';
-
-

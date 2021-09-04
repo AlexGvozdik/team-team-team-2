@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 async function foo() {
   try {
     const result = await fetchAPI.getGenres().then(data => data.genres)
-    console.log(result)
   } catch (error) {
     console.error(error)
   }
@@ -28,10 +27,6 @@ async function renderTrending(page) {
     const trends = await fetchAPI.fetchTrandingMovies(page).then(data => {
       return data.results;
     });
-    // if (page > trends.total_pages) {
-    //   spinnerMethod.removeSpinner();
-    //   return;
-    // }
     render(trends);
   } catch (e) {
     console.log('this is error:', e);
@@ -64,8 +59,11 @@ async function renderSearchResult(query, page) {
 }
 
 async function render(data) {
-  const genres = await fetchAPI.getGenres().then(list => {return list.genres});
+  console.log(data)
+  const genres = await fetchAPI.getGenres().then(list => { return list.genres });
+  // console.log(genres)
   const result = await renderGalleryMarkup(data, genres);
+  console.log(result)
   const cardsGallery = movieItemTpl(result);
   refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
 }
@@ -86,17 +84,20 @@ function renderGalleryMarkup(data, list) {
       release_date: createCardYear(obj),
     }));
   }
-  return data.map(obj => ({
+  return data.map(obj => {
+    return {
     ...obj,
 
     genres_short_list: createGenres(obj, list),
     release_date: createCardYear(obj),
-  }));
+    }
+  });
 }
 
 function createGenres(obj, list) {
   const movieCardGenresList = obj.genre_ids;
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
+  // console.log(movieCardGenresArray)
   const mapedGenres = movieCardGenresArray.map(({ name }) => name);
 
   let movieGenreArraySlice = [];
@@ -104,11 +105,8 @@ function createGenres(obj, list) {
     movieGenreArraySlice = mapedGenres;
   } else {
     movieGenreArraySlice = mapedGenres.slice(0, 2);
-    if (fetchAPI.language === 'en-US') { movieGenreArraySlice.push('Other'); }
-    else { movieGenreArraySlice.push('другие'); }
-
+    movieGenreArraySlice.push('Other');
   }
-
   return movieGenreArraySlice.join(', ');
 }
 

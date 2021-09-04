@@ -103,7 +103,7 @@ function onClicbtnLogout() {
 function successfulLogin() {
     const email = localStorage.getItem('email')
     const modifiedName = email.split('@')[0]
-    console.log(modifiedName)
+    // console.log(modifiedName)
     refs.btnOpenModalAuthentication.textContent = `Hi ${modifiedName}`;
     refs.greeting.textContent = `Welcome ${modifiedName} , do you really wanna `;
 

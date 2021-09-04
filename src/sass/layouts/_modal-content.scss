@@ -1,0 +1,193 @@
+.modal-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .modal-wrapper {
+      max-width: 618px;
+      flex-wrap: nowrap;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .modal-wrapper {
+      max-width: 882px;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .modal-right-part {
+      width: 100%;
+      padding-left: 0px;
+      margin-top: 30px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .modal-right-part {
+      width: 265px;
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    .modal-right-part {
+      padding-left: 30px;
+    }
+  }
+  
+  .wrapper-img {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .wrapper-img {
+      width: 264px;
+      height: 373px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .wrapper-img {
+      width: 396px;
+      height: 476px;
+      overflow: hidden;
+    }
+  }
+  
+  .modal-main-title {
+    // height: 21px;
+    font-size: 20px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--main-black-color);
+  }
+  @media screen and (min-width: 1024px) {
+    .modal-main-title {
+      // height: 31px;
+      font-size: 30px;
+      line-height: 1.16;
+    }
+  }
+  
+  .modal-secondary-title {
+    width: 39px;
+    // height: 16px;
+    font-size: 12px;
+    line-height: 1.33;
+    text-transform: uppercase;
+    color: var(--main-black-color);
+    margin-bottom: 10px;
+  }
+  
+  .modal-film-description {
+    width: 236px;
+    font-weight: var(--text-bold);
+    font-size: 12px;
+    line-height: 1.66;
+    color: var(--main-black-color);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .modal-film-description {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .modal-film-description {
+      width: 380px;
+    }
+  }
+  
+  ////// списки с информацией: рейтинг, просмотры итд... //////
+  .modal-lists-wrapper {
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .modal-item-position {
+    // height: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.33;
+    color: var(--modal-category-and-slash-color);
+  }
+  .modal-item-position:not(:last-child) {
+    margin-bottom: 5px;
+  }
+  
+  .modal-list-denominations {
+    width: auto;
+    // height: 16px;
+    font-size: 12px;
+    line-height: 1.33;
+    color: var(--main-black-color);
+    margin-right: 39px;
+  }
+  @media screen and (max-width: 1023px) {
+    .modal-list-denominations {
+      width: 50%;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .modal-list-denominations {
+      margin-right: 83px;
+    }
+  }
+  
+  .modal-item-description {
+    // height: 16px;
+    font-size: 12px;
+    line-height: 1.33;
+  }
+  
+  .modal-item-description:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  
+  .modal-item-description-rating {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 9px;
+    padding-right: 9px;
+    width: 36px;
+    background: var(--main-active-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    color: var(--main-white-color);
+    text-transform: uppercase;
+  }
+  
+  .modal-item-description-views {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 36px;
+    text-align: center;
+    background: var(--for-pagination-footer-votes-background-color);
+    border-radius: var(--border-radius);
+    text-transform: uppercase;
+  }
+  .modal-item-span {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  
+  .item-flex {
+    display: flex;
+  }
+  
+  .modal-list-genres {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .modal-item-genres:not(:last-child) {
+    margin-right: 10px;
+  }

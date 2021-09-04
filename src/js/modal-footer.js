@@ -1,5 +1,5 @@
 const refs = {
-    modalFooter:document.querySelector('.backdrop-dev'),
+    modalFooter:document.querySelector('.modal-footer-js'),
     devLink:document.querySelector('.goit-link'),
     btnClose:document.querySelector('.button-close')
 }

@@ -1,10 +1,10 @@
 import './sass/main.scss';
-<<<<<<< Updated upstream
+
 import './services/movies-api';
 import './js/modal-authentication';
 import './js/renderGallery';
 import './js/movie-card';
-=======
+
 
 
 const refs = {
@@ -41,4 +41,4 @@ function libRender (event) {
 
 }
 
->>>>>>> Stashed changes
+

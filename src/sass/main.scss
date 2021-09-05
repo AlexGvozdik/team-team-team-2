@@ -1,24 +1,18 @@
 /* ===========UTILS============================ */
 @import './utils/variables';
 
-
 /* ===========BASE============================ */
 @import './base/common';
 @import './base/container';
-
 
 /* ===========COMPONENTS============================ */
 @import './btn-authentication/btn-authentication';
 @import './modal-authentication/modal-authentication';
 
-
 /* ===========LAYOUT============================ */
 @import './layouts/header';
 @import './layouts/gallery-item';
 @import './footer';
-
-
-
 
 // @import './base-styles';
 // @import './modal-footer';
@@ -27,6 +21,6 @@
 // @import './layouts/modal-content';
 // @import './layouts/modal';
 // @import './layouts/movie-cards';
-// @import './layouts/card-overlay';
-
-
+@import './layouts/card-overlay';
+@import './components/theme-switcher';
+@import './components/up-btn';

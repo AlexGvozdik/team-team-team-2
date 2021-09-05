@@ -3,6 +3,8 @@ import './services/movies-api';
 import './js/modal-authentication';
 import './js/renderGallery';
 import './js/movie-card';
+import './js/theme-switcher';
+import './js/up-btn';
 
 
 

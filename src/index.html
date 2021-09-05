@@ -36,7 +36,7 @@
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <include src="./partials/header.html"></include>
 
-    <main>
+    <main class='home-main-bgimage'>
       <!-- <h1 class="visually-hidden">Movie library</h1> -->
       <section class="movie-gallery movie-gallery-js">
         <div class="container">
@@ -44,6 +44,8 @@
         </div>
         <div class="anchor"></div>
       </section>
+      <include src="./partials/theme-switcher.html"></include>
+      <include src="./partials/up-btn.html"></include>
     </main>
     <include src="./partials/authBtn/authBtn.html"></include>
     <include src="./partials/modal-window-authentication/modal-window-authentication.html"></include>

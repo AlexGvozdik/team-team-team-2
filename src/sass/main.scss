@@ -1,15 +1,32 @@
-@import './reset';
-@import './base-styles';
-@import './modal-footer';
+/* ===========UTILS============================ */
 @import './utils/variables';
-@import './btn-authentication/btn-authentication';
-@import './modal-authentication/modal-authentication';
-@import './layouts/gallery-card';
-@import './footer';
+
+
+/* ===========BASE============================ */
 @import './base/common';
 @import './base/container';
-@import './components/modal-close-btn';
+
+
+/* ===========COMPONENTS============================ */
+@import './btn-authentication/btn-authentication';
+@import './modal-authentication/modal-authentication';
+
+
+/* ===========LAYOUT============================ */
+@import './layouts/header';
 @import './layouts/gallery-item';
-@import './layouts/modal-content';
-@import './layouts/modal';
-@import './layouts/movie-cards';
+@import './footer';
+
+
+
+
+// @import './base-styles';
+// @import './modal-footer';
+// @import './layouts/gallery-card';
+// @import './components/modal-close-btn';
+// @import './layouts/modal-content';
+// @import './layouts/modal';
+// @import './layouts/movie-cards';
+// @import './layouts/card-overlay';
+
+

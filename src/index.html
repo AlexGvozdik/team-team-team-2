@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <meta name="description" content="Filmoteka - full movie library" />
      <meta
       name="keywords"
@@ -29,10 +30,12 @@
       rel="stylesheet"
       type="text/css"
     />
+
   </head>
   <body>
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <include src="./partials/header.html"></include>
+
     <main>
       <!-- <h1 class="visually-hidden">Movie library</h1> -->
       <section class="movie-gallery movie-gallery-js">
@@ -46,11 +49,12 @@
     <include src="./partials/modal-window-authentication/modal-window-authentication.html"></include>
     <include src="./partials/gallery-card.html"></include>
     <include src="./partials/footer.html"></include>
-    <include src="./partials/modal.html"></include>
+    <!-- <include src="./partials/modal.html"></include> -->
+
     <include src="./partials/modal-footer.html"></include>
+
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
-    <script src="./js/modal-footer.js"></script>
   </body>
 </html>

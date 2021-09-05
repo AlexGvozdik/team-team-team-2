@@ -59,11 +59,11 @@ async function renderSearchResult(query, page) {
 }
 
 async function render(data) {
-  console.log(data)
+  // console.log(data)
   const genres = await fetchAPI.getGenres().then(list => { return list.genres });
   // console.log(genres)
   const result = await renderGalleryMarkup(data, genres);
-  console.log(result)
+  // console.log(result)
   const cardsGallery = movieItemTpl(result);
   refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
 }

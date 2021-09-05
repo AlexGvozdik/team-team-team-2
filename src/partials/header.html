@@ -1,27 +1,4 @@
-<<<<<<< Updated upstream
-<header>
-          <div class="search">
-      <form class="search-form js-search-form">
-        <input
-          class="search-control js-search-control"
-          type="text"
-          name="query"
-          autocomplete="off"
-          placeholder="Search movies..."
-        />
-        <button class="search__btn" type="submit">
-          <svg class="search-icon">
-            <use href="#"></use>
-          </svg>
-        </button>
-        <div class="warning visually-hidden">
-          Search result not successful. Enter the correct movie name and
-        </div>
-      </form>
-    </div>
-    </header>
-=======
-<section class="header container">
+<!-- <section class="header container">
 
   <div class="header-container">
 
@@ -60,5 +37,48 @@
     <button class="header-button_queue is-hidden" type="button" lang="en">QUEUE</button>
   </div>
 
-</section>
->>>>>>> Stashed changes
+</section> -->
+
+
+<header class="header">
+  <div class="container">
+    <nav class="navigation">
+      <a class="logo-link link" href="./index.html">
+        <svg class="icon-film" width="24px" height="24px">
+          <use href="./images/svg-icon/symbol-defs.svg#icon-film"></use>
+        </svg>
+        <p class="header-text">Filmoteka</p>
+      </a>
+
+      <ul class="navigation-list list">
+          <li class="navigation-list_item current home-js">
+            <a class="navigation-list_link link" href="/index.html" lang="en">HOME</a>
+          </li>
+          <li class="navigation-list_item myLibrary-js">
+            <a class="navigation-list_link link" href="#" lang="en">MY LIBRARY</a>
+          </li>
+      </ul>
+    </nav>
+              <div class="search subscription">
+      <form class="search-form js-search-form subscription__search">
+        <input
+          class="search-control js-search-control subscription__text"
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search movies..."
+        />
+        <button class="search__btn subscription__button" type="submit">
+          <svg class="search-icon subscription__svg" width="12px" height="12px">
+            <use href="./images/svg-icon/symbol-defs.svg#icon-search-2"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <div class="header-button">
+    <button class="header-button_watch is-hidden" type="button" lang="en">WATCHED</button>
+    <button class="header-button_queue is-hidden" type="button" lang="en">QUEUE</button>
+  </div>
+  </div>
+    </header>

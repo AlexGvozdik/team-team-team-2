@@ -1,0 +1,14 @@
+.js-notification-wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.notification-cat-icon {
+  transition: all 1s;
+  transform-origin: 50% 50%;
+}
+
+.notification-cat-icon:hover {
+  transform: scale(1.3);
+}

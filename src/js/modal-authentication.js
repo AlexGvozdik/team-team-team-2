@@ -1,26 +1,18 @@
 import AuthService from './authService';
-import fetchAPI from '../services/movies-api';
-// 'https://events-ecec8-default-rtdb.firebaseio.com/'
 const auth = new AuthService();
-// async function foo() {
-//         const trends = await fetchAPI.fetchTrandingMovies().then(data => {
-//       return data.results;
-//         });
-//     console.log(trends)
-// }
-// foo()
+
 const refs = {
     btnOpenModalAuthentication: document.querySelector('.btn-authentication'),
-    btnClose: document.querySelector('[data-modal-window-close-authentication]'),
-    backdrop: document.querySelector('[data-modal-backdrop-authentication]'),
-    txtEmail: document.querySelector('#txtEmail'),
-    txtPassword: document.querySelector('#txtPassword'),
-    btnLogin: document.querySelector('#btnLogin'),
-    btnSignUp: document.querySelector('#btnSignUp'),
-    btnLogout: document.querySelector('#btnLogout'),
-    greeting: document.querySelector('.greeting-authentication'),
-    body: document.querySelector('body'),
-};
+  btnClose: document.querySelector('[data-modal-window-close-authentication]'),
+  backdrop: document.querySelector('[data-modal-backdrop-authentication]'),
+  txtEmail: document.querySelector('#txtEmail'),
+  txtPassword: document.querySelector('#txtPassword'),
+  btnLogin: document.querySelector('#btnLogin'),
+  btnSignUp: document.querySelector('#btnSignUp'),
+  btnLogout: document.querySelector('#btnLogout'),
+  greeting: document.querySelector('.greeting-authentication'),
+  body: document.querySelector('body'),
+}
 
 refs.btnOpenModalAuthentication.addEventListener('click', onBtnAuthenticationClick);
 refs.backdrop.addEventListener('click', onClickBackdrop);
@@ -36,7 +28,7 @@ if (auth.getCurrentUser() !== null) {
 
 function onBtnAuthenticationClick() {
     refs.backdrop.classList.add('is--open');
-    refs.body.classList.toggle('modal-open');
+    refs.body.classList.toggle('modal-open-auth');
 }
 function onClickBackdrop(event) {
     if (event.currentTarget === event.target) {
@@ -45,7 +37,7 @@ function onClickBackdrop(event) {
 }
 function onClickBtnClose() {
     refs.backdrop.classList.remove('is--open');
-    refs.body.classList.toggle('modal-open');
+    refs.body.classList.toggle('modal-open-auth');
 }
 
 function onClickbtnLogin() {
@@ -103,7 +95,6 @@ function onClicbtnLogout() {
 function successfulLogin() {
     const email = localStorage.getItem('email')
     const modifiedName = email.split('@')[0]
-    // console.log(modifiedName)
     refs.btnOpenModalAuthentication.textContent = `Hi ${modifiedName}`;
     refs.greeting.textContent = `Welcome ${modifiedName} , do you really wanna `;
 

@@ -1,25 +1,14 @@
 import movieItemTpl from '../templates/movieItemTpl.hbs';
 import fetchAPI from '../services/movies-api';
 import myError from './customAlert';
-const refs = {
-  galleryList: document.querySelector('.js-gallery-list'),
-  searchInput: document.querySelector('.js-search-control'),
-  searchForm: document.querySelector('.js-search-form'),
-}
+import refs from './refs';
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
 });
-async function foo() {
-  try {
-    const result = await fetchAPI.getGenres().then(data => data.genres)
-  } catch (error) {
-    console.error(error)
-  }
-}
 
-foo()
-
-async function renderTrending(page) {
+async function renderTrending(page = 1) {
+  refs.movieGallerySection.dataset.page = 'trending';
   try {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
@@ -34,6 +23,7 @@ async function renderTrending(page) {
 }
 
 async function renderSearchResult(query, page) {
+  refs.movieGallerySection.dataset.page = 'searching';
   try {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
@@ -59,17 +49,13 @@ async function renderSearchResult(query, page) {
 }
 
 async function render(data) {
-  // console.log(data)
   const genres = await fetchAPI.getGenres().then(list => { return list.genres });
-  // console.log(genres)
   const result = await renderGalleryMarkup(data, genres);
-  // console.log(result)
   const cardsGallery = movieItemTpl(result);
   refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
 }
 
 function renderGalleryMarkup(data, list) {
-  // console.log(data)
   if (Object.keys(data[0]).includes('genres')) {
     let newData = data.map(item => {
       const id = item.genres.map(item => item.id);
@@ -97,7 +83,6 @@ function renderGalleryMarkup(data, list) {
 function createGenres(obj, list) {
   const movieCardGenresList = obj.genre_ids;
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
-  // console.log(movieCardGenresArray)
   const mapedGenres = movieCardGenresArray.map(({ name }) => name);
 
   let movieGenreArraySlice = [];
@@ -129,3 +114,5 @@ async function onSubmitHandler(e) {
   }
   renderSearchResult(query, 1);
 }
+
+export { renderTrending, renderSearchResult, render};

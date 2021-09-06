@@ -11,18 +11,27 @@ async function onRender(entries) {
   const query = refs.searchInput.value;
   if (entries[0].isIntersecting) {
     if (refs.galleryList.children.length !== 0) {
-      page += 1;
       spinnerMethod.addSpinner();
-      if (query === '') {
-        renderTrending(page);
-      } else {
-        renderSearchResult(query,page)
+      if (previousPage !== refs.movieGallerySection.dataset.page) {
+        page = 1;
       }
-      setTimeout(()=> spinnerMethod.removeSpinner(),1000)
+      page += 1;
+      switch (refs.movieGallerySection.dataset.page) {
+        case 'trending':
+          renderTrending(page);
+          previousPage = refs.movieGallerySection.dataset.page;
+          break;
+        case 'searching':
+          renderSearchResult(query, page);
+          previousPage = refs.movieGallerySection.dataset.page;
+          break;
+        default:
+          break;
+      }
+      spinnerMethod.removeSpinner();
     } else {
       spinnerMethod.removeSpinner();
       return;
     }
   }
 }
-

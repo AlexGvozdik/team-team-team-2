@@ -23,6 +23,16 @@ export default {
         myError('Something went wrong')
         }
     },
+    async checkWatchedMovies(movie) {
+        const response = await axios.get(`https://film-proj-default-rtdb.firebaseio.com/watchedMovies.json`);
+        const result = response.data ? Object.values(response.data) : "";
+        let include;
+        if (result) {
+            include = result.find(film => film.id === movie.id)
+            return include;
+        }
+        return include;
+    },
     async addMovieQueued(movieAdded) {
         try {
             await axios.post(`https://film-proj-default-rtdb.firebaseio.com/queuedMovies.json`, movieAdded);
@@ -45,6 +55,15 @@ export default {
         myError('Something went wrong')
         }
     },
-
+    async checkQueuedMovies(movie) {
+        const { data } = await axios.get(`https://film-proj-default-rtdb.firebaseio.com/queuedMovies.json`);
+        const result = data ? Object.values(data) : "";
+        let include;
+        if (result) {
+            include = result.find(film => film.id === movie.id)
+            return include;
+        }
+        return false;
+    }
 }
 

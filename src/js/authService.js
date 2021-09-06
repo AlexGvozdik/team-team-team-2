@@ -1,11 +1,8 @@
 import myError from './customAlert.js';
-
 import firebase from '@firebase/app';
 import '@firebase/auth';
 import emailValidator from 'email-validator';
-
 class AuthService {
-    #USER_NAME = 'name';
   #USER_KEY = 'user-token';
   #USER_EMAIL = 'email';
 
@@ -36,7 +33,6 @@ class AuthService {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(_ => {
-                localStorage.setItem(this.#USER_NAME, firebase.auth().currentUser.bc.name)
                 localStorage.setItem(this.#USER_EMAIL, firebase.auth().currentUser.bc.email)
         return localStorage.setItem(this.#USER_KEY, firebase.auth().currentUser.uid)
       })
@@ -57,7 +53,6 @@ class AuthService {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then(_ => {
-                  localStorage.setItem(this.#USER_NAME, firebase.auth().currentUser.bc.name)
                   localStorage.setItem(this.#USER_EMAIL, firebase.auth().currentUser.bc.email)
           return localStorage.setItem(this.#USER_KEY, firebase.auth().currentUser.uid)
       })
@@ -67,30 +62,12 @@ class AuthService {
         return false;
       });
   }
-  // infoEmail(email, password) {
-  //   if (!emailValidator.validate(email)) {
-  //     myError(`${email ? email : 'Empty string'} is invalid email.`);
-  //     return Promise.resolve(false);
-  //   }
-
-  //   return firebase
-  //     .auth()
-  //     .signInWithEmailAndPassword(email, password)
-  //     .then(_ => {
-  //       return localStorage.setItem(this.USER_EMAIL, firebase.auth().currentUser.bc.email)
-  //     })
-  //     .catch(error => {
-  //       myError(error.message);
-  //       return false;
-  //     });
-  // }
 
   logOut() {
     return firebase
       .auth()
       .signOut()
       .then(_ => {
-                localStorage.removeItem(this.#USER_NAME)
                 localStorage.removeItem(this.#USER_EMAIL)
         return localStorage.removeItem(this.#USER_KEY)
       })

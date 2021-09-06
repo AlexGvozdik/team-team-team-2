@@ -1,3 +1,4 @@
+
 // const refs = {
 //     modalFooter:document.querySelector('.modal-footer-js'),
 //     devLink:document.querySelector('.goit-link'),
@@ -32,6 +33,7 @@ const refs = {
     modalConteiner:document.querySelector('.card-container')
 
 }
+
 
 const team = [
     {

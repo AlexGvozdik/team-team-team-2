@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
 });
 
-async function renderTrending(page) {
+async function renderTrending(page = 1) {
+  refs.movieGallerySection.dataset.page = 'trending';
   try {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
@@ -17,11 +18,12 @@ async function renderTrending(page) {
     });
     render(trends);
   } catch (e) {
-    // console.log('this is error:', e);
+    console.log('this is error:', e);
   }
 }
 
 async function renderSearchResult(query, page) {
+  refs.movieGallerySection.dataset.page = 'searching';
   try {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
@@ -42,7 +44,7 @@ async function renderSearchResult(query, page) {
     }
     render(results);
   } catch (e) {
-    // myError('Unsuccessful results. Try again!');
+    myError('Unsuccessful results. Try again!');
   }
 }
 

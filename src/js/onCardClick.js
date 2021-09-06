@@ -25,6 +25,7 @@ function onOpenModal(id) {
   
   fetchAPI.searchByMovieId(id).then(async movie => {
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
+    
     const token = localStorage.getItem('user-token')
     
     const watched = await firebaseAPI.checkWatchedMovies(movie);

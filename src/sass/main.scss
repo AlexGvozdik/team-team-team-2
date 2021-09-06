@@ -22,15 +22,13 @@
 
 /* ===========LAYOUT============================ */
 @import './layouts/header';
-
+@import './layouts/gallery-notification';
 @import './layouts/movie-cards';
 @import './layouts/gallery-item';
 @import './layouts/spinner';
 @import './footer';
 @import './modal-authentication/modal-authentication';
 @import './layouts/modal-movie';
-
-
 @import './layouts/gallery-notification';
 
 // @import './base-styles';
@@ -41,5 +39,4 @@
 // @import './layouts/modal';
 // @import './layouts/movie-cards';
 // @import './layouts/card-overlay';
-
 

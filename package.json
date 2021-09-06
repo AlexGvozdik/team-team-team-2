@@ -39,7 +39,7 @@
   "dependencies": {
     "@firebase/app": "^0.6.27",
     "@firebase/auth": "^0.16.7",
-    "axios": "^0.21.3",
+    "axios": "^0.21.2",
     "basiclightbox": "^5.0.4",
     "email-validator": "^2.0.4",
     "firebase": "^9.0.1",

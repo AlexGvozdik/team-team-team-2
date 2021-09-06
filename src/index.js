@@ -5,6 +5,9 @@ import './services/movies-api';
 import './js/modal-authentication';
 import './js/headerMenu';
 import './js/renderGallery';
+
+import './js/movie-card';
+import './js/footer';
 import './js/modalClose';
 import './js/onCardClick';
 import './js/infiniteScroll';
@@ -44,5 +47,4 @@ import './js/infiniteScroll';
 //   refs.headerBcg.classList.add('library');
 
 // }
-
 

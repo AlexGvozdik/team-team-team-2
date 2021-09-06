@@ -15,20 +15,26 @@
   border: 1px solid #ff6b01;
   border-radius: 50%;
   position: fixed;
-  bottom: 20px;
-  right: 60px;
+  bottom: 130px;
+  right: 2%;
+  // bottom: 20px;
+  // right: 60px;
   cursor: pointer;
   transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 1.5);
   overflow: hidden;
 
   @media screen and (min-width: 768px) {
-    bottom: 20px;
-    right: 10px;
+    // bottom: 20px;
+    // right: 10px;
+    bottom: 130px;
+    right: 2%;
   }
 
   @media screen and (min-width: 480px) {
-    bottom: 20px;
-    right: 15px;
+    // bottom: 20px;
+    // right: 15px;
+    bottom: 130px;
+    right: 2%;
   }
 }
 

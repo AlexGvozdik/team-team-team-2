@@ -13,8 +13,16 @@ html[data-theme='dark-theme'] {
 }
 .theme-switcher {
   position: absolute;
-  top: 100px;
-  right: 213px;
+  top: 110px;
+  right: 50%;
+  @media screen and (min-width: 768px) {
+    top: 45px;
+    right: 94%;
+  }
+  @media screen and (min-width: 1200px) {
+    top: 45px;
+    right: 89%;
+  }
 }
 
 .theme-switch__input,

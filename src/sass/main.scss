@@ -1,5 +1,8 @@
 /* ===========UTILS============================ */
 @import './utils/variables';
+@import './utils/is-hidden';
+@import './utils/visually-hidden';
+
 
 
 /* ===========BASE============================ */
@@ -9,14 +12,24 @@
 
 /* ===========COMPONENTS============================ */
 @import './btn-authentication/btn-authentication';
-@import './modal-authentication/modal-authentication';
+@import './components//modal';
+@import './components//modal-movie';
+@import './components/backdrop';
+@import './components/button';
+@import './components/modal-close-btn';
+
 
 
 /* ===========LAYOUT============================ */
 @import './layouts/header';
+@import './layouts/gallery-notification';
+
+@import './layouts/movie-cards';
 @import './layouts/gallery-item';
+@import './layouts/spinner';
 @import './footer';
 
+@import './layouts/modal-movie';
 
 
 

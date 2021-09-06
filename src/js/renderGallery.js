@@ -1,24 +1,11 @@
 import movieItemTpl from '../templates/movieItemTpl.hbs';
 import fetchAPI from '../services/movies-api';
 import myError from './customAlert';
-const refs = {
-  galleryList: document.querySelector('.js-gallery-list'),
-  searchInput: document.querySelector('.js-search-control'),
-  searchForm: document.querySelector('.js-search-form'),
-}
+import refs from './refs';
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
 });
-async function foo() {
-  try {
-    const result = await fetchAPI.getGenres().then(data => data.genres)
-    console.log(result)
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-foo()
 
 async function renderTrending(page) {
   try {
@@ -28,13 +15,9 @@ async function renderTrending(page) {
     const trends = await fetchAPI.fetchTrandingMovies(page).then(data => {
       return data.results;
     });
-    // if (page > trends.total_pages) {
-    //   spinnerMethod.removeSpinner();
-    //   return;
-    // }
     render(trends);
   } catch (e) {
-    console.log('this is error:', e);
+    // console.log('this is error:', e);
   }
 }
 
@@ -59,19 +42,18 @@ async function renderSearchResult(query, page) {
     }
     render(results);
   } catch (e) {
-    myError('Unsuccessful results. Try again!');
+    // myError('Unsuccessful results. Try again!');
   }
 }
 
 async function render(data) {
-  const genres = await fetchAPI.getGenres().then(list => {return list.genres});
+  const genres = await fetchAPI.getGenres().then(list => { return list.genres });
   const result = await renderGalleryMarkup(data, genres);
   const cardsGallery = movieItemTpl(result);
   refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
 }
 
 function renderGalleryMarkup(data, list) {
-  // console.log(data)
   if (Object.keys(data[0]).includes('genres')) {
     let newData = data.map(item => {
       const id = item.genres.map(item => item.id);
@@ -86,12 +68,14 @@ function renderGalleryMarkup(data, list) {
       release_date: createCardYear(obj),
     }));
   }
-  return data.map(obj => ({
+  return data.map(obj => {
+    return {
     ...obj,
 
     genres_short_list: createGenres(obj, list),
     release_date: createCardYear(obj),
-  }));
+    }
+  });
 }
 
 function createGenres(obj, list) {
@@ -104,11 +88,8 @@ function createGenres(obj, list) {
     movieGenreArraySlice = mapedGenres;
   } else {
     movieGenreArraySlice = mapedGenres.slice(0, 2);
-    if (fetchAPI.language === 'en-US') { movieGenreArraySlice.push('Other'); }
-    else { movieGenreArraySlice.push('другие'); }
-
+    movieGenreArraySlice.push('Other');
   }
-
   return movieGenreArraySlice.join(', ');
 }
 
@@ -131,3 +112,5 @@ async function onSubmitHandler(e) {
   }
   renderSearchResult(query, 1);
 }
+
+export { renderTrending, renderSearchResult, render};

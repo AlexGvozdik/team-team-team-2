@@ -1,16 +1,43 @@
-@import './reset';
-@import './base-styles';
-@import './modal-footer';
+/* ===========UTILS============================ */
 @import './utils/variables';
-@import './btn-authentication/btn-authentication';
-@import './modal-authentication/modal-authentication';
-@import './layouts/gallery-card';
-@import './footer';
+@import './utils/is-hidden';
+@import './utils/visually-hidden';
+
+
+
+/* ===========BASE============================ */
 @import './base/common';
 @import './base/container';
+
+
+/* ===========COMPONENTS============================ */
+@import './btn-authentication/btn-authentication';
+@import './components//modal';
+@import './components//modal-movie';
+@import './components/backdrop';
+@import './components/button';
 @import './components/modal-close-btn';
-@import './layouts/gallery-item';
-@import './layouts/modal-content';
-@import './layouts/modal';
+
+
+
+/* ===========LAYOUT============================ */
+@import './layouts/header';
+@import './layouts/gallery-notification';
 @import './layouts/movie-cards';
-@import './utils/visually-hidden';
+@import './layouts/gallery-item';
+@import './layouts/spinner';
+@import './footer';
+
+@import './layouts/modal-movie';
+
+
+
+// @import './base-styles';
+// @import './modal-footer';
+// @import './layouts/gallery-card';
+// @import './components/modal-close-btn';
+// @import './layouts/modal-content';
+// @import './layouts/modal';
+// @import './layouts/movie-cards';
+// @import './layouts/card-overlay';
+

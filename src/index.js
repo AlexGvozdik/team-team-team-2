@@ -10,6 +10,7 @@ import './js/footer';
 import './js/modalClose';
 import './js/onCardClick';
 import './js/infiniteScroll';
+import './js/modal-footer';
 
 
 

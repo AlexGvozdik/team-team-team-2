@@ -3,12 +3,9 @@
 @import './utils/is-hidden';
 @import './utils/visually-hidden';
 
-
-
 /* ===========BASE============================ */
 @import './base/common';
 @import './base/container';
-
 
 /* ===========COMPONENTS============================ */
 @import './btn-authentication/btn-authentication';
@@ -17,8 +14,6 @@
 @import './components/backdrop';
 @import './components/button';
 @import './components/modal-close-btn';
-
-
 
 /* ===========LAYOUT============================ */
 @import './layouts/header';
@@ -30,14 +25,11 @@
 
 @import './layouts/modal-movie';
 
-
-
 // @import './base-styles';
-// @import './modal-footer';
+@import './modal-footer';
 // @import './layouts/gallery-card';
 // @import './components/modal-close-btn';
 // @import './layouts/modal-content';
 // @import './layouts/modal';
 // @import './layouts/movie-cards';
 // @import './layouts/card-overlay';
-

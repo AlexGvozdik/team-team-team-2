@@ -1,6 +1,6 @@
 import modalAppearanceToggle from './modalAppearanceToggle';
 import refs from './refs';
-// import { renderMovieList } from './renderFromLocalStorage';
+import { renderFromFirebaseAPI } from './renderFromFirebaseAPI';
 
 export function closeOnClick(e) {
   if (e.target.closest('.js-close-btn') || e.target === refs.modalBackdrop) {
@@ -9,7 +9,7 @@ export function closeOnClick(e) {
     modalAppearanceToggle();
     refs.modalBackdrop.removeEventListener('click', closeOnClick);
     if (refs.movieGallerySection.dataset.page === 'queue' || refs.movieGallerySection.dataset.page === 'watched') {
-      renderMovieList(refs.movieGallerySection.dataset.page, 1);
+      renderFromFirebaseAPI(refs.movieGallerySection.dataset.page, 1);
     }
   }
 }
@@ -20,7 +20,7 @@ export function modalKeypressEsc(e) {
     modalAppearanceToggle();
     document.removeEventListener('keydown', modalKeypressEsc);
     if (refs.movieGallerySection.dataset.page === 'queue' || refs.movieGallerySection.dataset.page === 'watched') {
-      renderMovieList(refs.movieGallerySection.dataset.page, 1);
+      renderFromFirebaseAPI(refs.movieGallerySection.dataset.page, 1);
     }
   }
 }

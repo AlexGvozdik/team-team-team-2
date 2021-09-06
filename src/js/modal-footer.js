@@ -1,8 +1,4 @@
-const refs = {
-    modalFooter:document.querySelector('.backdrop-dev'),
-    devLink:document.querySelector('.goit-link'),
-    btnClose:document.querySelector('.button-close')
-}
+import refs from './refs';
 
 refs.devLink.addEventListener('click', clickOnLink);
 refs.btnClose.addEventListener('click', clickOnBtnClose);

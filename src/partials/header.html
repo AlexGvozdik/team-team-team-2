@@ -40,7 +40,7 @@
 </section> -->
 
 
-<header class="header">
+<!-- <header class="header js-header">
   <div class="container">
     <nav class="navigation">
       <a class="logo-link link" href="./index.html">
@@ -52,10 +52,10 @@
 
       <ul class="navigation-list list">
           <li class="navigation-list_item current home-js">
-            <a class="navigation-list_link link" href="/index.html" lang="en">HOME</a>
+            <a class="navigation-list_link link js-home_page" href="/index.html" lang="en" id="home">HOME</a>
           </li>
           <li class="navigation-list_item myLibrary-js">
-            <a class="navigation-list_link link" href="#" lang="en">MY LIBRARY</a>
+            <a class="navigation-list_link link js-lib_page" href="#" lang="en">MY LIBRARY</a>
           </li>
       </ul>
     </nav>
@@ -76,9 +76,61 @@
       </form>
     </div>
 
-    <div class="header-button">
-    <button class="header-button_watch is-hidden" type="button" lang="en">WATCHED</button>
-    <button class="header-button_queue is-hidden" type="button" lang="en">QUEUE</button>
+    <div class="header-button js-buttons">
+    <button class="header-button_watch is-hidden js-btn_watched" type="button" lang="en">WATCHED</button>
+    <button class="header-button_queue is-hidden js-btn_queue" type="button" lang="en">QUEUE</button>
   </div>
   </div>
-    </header>
+    </header> -->
+
+    <header class="header js-header header-container_home">
+  <div class="container">
+
+    <nav class="header-nav js-header-nav">
+      <a class="logo link js-logo" href="">
+        <svg class="logo-icon">
+          <use href="./images/sprite.svg#icon-film"></use>
+        </svg>
+        <span class="logo-text">Filmoteka</span>
+      </a>
+      <ul class="navigation-menu-list list">
+        <li class="navigation-list-link">
+          <a class="link navigation-menu-link current js-home_page" id="home" href="">Home</a>
+        </li>
+        <li class="navigation-list-link">
+          <a class="link navigation-menu-link js-lib_page" href="">My library</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <form class="search-form js-search-form">
+        <input
+          class="search-control js-search-control"
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search movies..."
+        />
+        <button class="search__btn" type="submit">
+          <svg class="search-icon">
+            <use href="./images/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="buttons js-buttons visually-hidden">
+      <button
+        class="button_lib btn_watched active-btn js-btn_watched"
+        data-libType="watched"
+        type="button"
+      >
+        Watched
+      </button>
+      <button class="button_lib btn_queue js-btn_queue" type="button" data-libType="queue">
+        Queue
+      </button>
+    </div>
+  </div>
+</header>
+

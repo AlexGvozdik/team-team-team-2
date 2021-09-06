@@ -1,23 +1,11 @@
 import movieItemTpl from '../templates/movieItemTpl.hbs';
 import fetchAPI from '../services/movies-api';
 import myError from './customAlert';
-const refs = {
-  galleryList: document.querySelector('.js-gallery-list'),
-  searchInput: document.querySelector('.js-search-control'),
-  searchForm: document.querySelector('.js-search-form'),
-}
+import refs from './refs';
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
 });
-async function foo() {
-  try {
-    const result = await fetchAPI.getGenres().then(data => data.genres)
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-foo()
 
 async function renderTrending(page) {
   try {
@@ -29,7 +17,7 @@ async function renderTrending(page) {
     });
     render(trends);
   } catch (e) {
-    console.log('this is error:', e);
+    // console.log('this is error:', e);
   }
 }
 
@@ -54,22 +42,18 @@ async function renderSearchResult(query, page) {
     }
     render(results);
   } catch (e) {
-    myError('Unsuccessful results. Try again!');
+    // myError('Unsuccessful results. Try again!');
   }
 }
 
 async function render(data) {
-  // console.log(data)
   const genres = await fetchAPI.getGenres().then(list => { return list.genres });
-  // console.log(genres)
   const result = await renderGalleryMarkup(data, genres);
-  // console.log(result)
   const cardsGallery = movieItemTpl(result);
   refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
 }
 
 function renderGalleryMarkup(data, list) {
-  // console.log(data)
   if (Object.keys(data[0]).includes('genres')) {
     let newData = data.map(item => {
       const id = item.genres.map(item => item.id);
@@ -97,7 +81,6 @@ function renderGalleryMarkup(data, list) {
 function createGenres(obj, list) {
   const movieCardGenresList = obj.genre_ids;
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
-  // console.log(movieCardGenresArray)
   const mapedGenres = movieCardGenresArray.map(({ name }) => name);
 
   let movieGenreArraySlice = [];
@@ -129,3 +112,5 @@ async function onSubmitHandler(e) {
   }
   renderSearchResult(query, 1);
 }
+
+export { renderTrending, renderSearchResult, render};

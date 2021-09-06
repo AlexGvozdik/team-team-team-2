@@ -1,14 +1,7 @@
 import AuthService from './authService';
 import fetchAPI from '../services/movies-api';
-// 'https://events-ecec8-default-rtdb.firebaseio.com/'
 const auth = new AuthService();
-// async function foo() {
-//         const trends = await fetchAPI.fetchTrandingMovies().then(data => {
-//       return data.results;
-//         });
-//     console.log(trends)
-// }
-// foo()
+
 const refs = {
     btnOpenModalAuthentication: document.querySelector('.btn-authentication'),
     btnClose: document.querySelector('[data-modal-window-close-authentication]'),
@@ -103,7 +96,6 @@ function onClicbtnLogout() {
 function successfulLogin() {
     const email = localStorage.getItem('email')
     const modifiedName = email.split('@')[0]
-    // console.log(modifiedName)
     refs.btnOpenModalAuthentication.textContent = `Hi ${modifiedName}`;
     refs.greeting.textContent = `Welcome ${modifiedName} , do you really wanna `;
 

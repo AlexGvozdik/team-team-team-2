@@ -6,11 +6,12 @@ import './js/modal-authentication';
 import './js/headerMenu';
 import './js/renderGallery';
 
-import './js/movie-card';
+// import './js/movie-card';
 import './js/footer';
 import './js/modalClose';
 import './js/onCardClick';
 import './js/infiniteScroll';
+import './js/modal-footer';
 
 
 

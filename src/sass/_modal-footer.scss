@@ -2,28 +2,10 @@
 ::-webkit-scrollbar {
   width: 0px;
 }
-
-// .backdrop-dev {
-//   position: fixed;
-//   width: 100%;
-//   height: 100%;
-//   top: 0;
-//   left: 0;
-//   background-color: rgba(0, 0, 0, 0.2);
-// }
-.modal-footer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  width: 900px;
-  height: 568px;
-  overflow-y: scroll;
-  background-color: #fff;
-
+.team-modal {
   .dev-team {
     text-align: center;
+    margin-bottom: 40px;
     h2 {
       display: inline-block;
       padding: 10px;
@@ -31,23 +13,21 @@
     }
   }
 
-  .button-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    border: none;
-    cursor: pointer;
-    .icon-close {
-    }
-  }
-
   .dev-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    // Добавить в общие стили
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
     .dev-items {
       padding: 20px;
@@ -64,6 +44,8 @@
         margin-bottom: 10px;
         border-radius: 50%;
         object-fit: cover;
+        width: 150px;
+        height: 150px;
       }
 
       .position {
@@ -81,6 +63,7 @@
   display: flex;
   justify-content: center;
   margin-top: 10px;
+  color: #545454;
 
   li:not(:last-child) {
     margin-right: 10px;

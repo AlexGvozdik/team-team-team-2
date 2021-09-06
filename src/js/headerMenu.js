@@ -1,7 +1,6 @@
 import refs from './refs.js';
 import { renderFromFirebaseAPI } from './renderFromFirebaseAPI.js';
 import { renderTrending } from './renderGallery.js';
-// import { localStorageAPI } from './localStorageAPI.js';
 
 // /*=== Переключение страниц с использованием классов ===*/
 // ---------------------------------------------------

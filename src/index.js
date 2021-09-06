@@ -1,3 +1,4 @@
+import './js/refs'
 import './sass/main.scss';
 import './js/spinner';
 import './services/movies-api';

@@ -1,6 +1,6 @@
 .btn-authentication {
   position: absolute;
-  bottom: 20px;
+  top: 170px;
   left: 50%;
   transform: translate(-50%);
   padding: 5px;
@@ -18,8 +18,8 @@
 @media screen and (min-width: 768px) {
   .btn-authentication {
     position: absolute;
-    bottom: 20px;
-    left: 90%;
+    top: 100px;
+    left: 80%;
     border: 3px solid #ff6b08;
     font-size: 12px;
   }
@@ -34,4 +34,47 @@
 .btn-authentication:hover {
   background-color: white;
   color: #ff6b08;
+}
+
+.modal__btn {
+  position: absolute;
+  display: block;
+  right: 25px;
+  top: 25px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__btn_close::before {
+  transform: rotate(-45deg);
+  transition: transform 300ms linear;
+  position: absolute;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 3px;
+  background-color: #4c00fe;
+}
+
+.modal__btn:hover .modal__btn_close::before {
+  transform: rotate(-130deg);
+}
+
+.modal__btn:hover .modal__btn_close::after {
+  transform: rotate(130deg);
+}
+
+.modal__btn_close::after {
+  transform: rotate(45deg);
+  transition: transform 300ms linear;
+  position: absolute;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 3px;
+  background-color: #4c00fe;
 }

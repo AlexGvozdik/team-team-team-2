@@ -1,3 +1,4 @@
+import './js/refs'
 import './sass/main.scss';
 import './js/spinner';
 import './services/movies-api';
@@ -10,6 +11,7 @@ import './js/footer';
 import './js/modalClose';
 import './js/onCardClick';
 import './js/infiniteScroll';
+import './js/modal-footer';
 
 
 

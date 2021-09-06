@@ -26,4 +26,8 @@ export default {
   anchor: document.querySelector('.anchor'),
   trailerBackdrop: document.querySelector('.js-backdrop-trailer'),
   trailerIframe: document.querySelector('.js-trailer'),
+
+  modalFooter:document.querySelector('.backdrop-dev'),
+  devLink: document.querySelector('.goit-link'),
+  btnClose:document.querySelector('.button-close')
 };

@@ -19,16 +19,24 @@ function onCardClick(eve) {
 function onOpenModal(id) {
   document.addEventListener('keydown', modalKeypressEsc);
   refs.modalBackdrop.addEventListener('click', closeOnClick);
-
+  
   refs.modalBackdrop.classList.remove('is-hidden');
   document.body.classList.add('modal-open');
-
-  fetchAPI.searchByMovieId(id).then(movie => {
+  
+  fetchAPI.searchByMovieId(id).then(async movie => {
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
-
+    
+    const token = localStorage.getItem('user-token')
+    
+    const watched = await firebaseAPI.checkWatchedMovies(movie);
+    const queued = await firebaseAPI.checkQueuedMovies(movie);
+    
+    if (watched && token) {
+      document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
+      document.querySelector('.js-modal-btn-remove-watched').classList.toggle('visually-hidden');
+    }
     document.querySelector('.js-modal-btn-watched').addEventListener('click', onWatchedAdd);
     async function onWatchedAdd(event) {
-      const token = localStorage.getItem('user-token')
       if (!token) {
         myError('please SIGN IN')
         return false
@@ -37,11 +45,7 @@ function onOpenModal(id) {
       event.target.nextElementSibling.classList.toggle('visually-hidden');
       await firebaseAPI.addMovieWatched(movie)
       const result = await firebaseAPI.getAllWatchedMovies()
-      console.log(Object.values(result).reverse())
       const movieId = Object.keys(result).reverse()[0]
-      // const movieObj = Object.fromEntries(movieMy)
-      // localStorage.setItem('watchededed',JSON.stringify(movieObj))
-      // event.target.parentNode.setAttribute('data-id',`${moveiId}`)
       event.target.nextElementSibling.setAttribute('data-id',`${movieId}`)
     }
 
@@ -53,8 +57,11 @@ function onOpenModal(id) {
       event.target.previousElementSibling.classList.toggle('visually-hidden');
       const id = event.target.dataset.id
       await firebaseAPI.removeMovieWatched(id)
-      // localStorage.setItem('id',idTemp)
-      // const idPerm = localStorage.getItem('id')
+    }
+
+    if (queued) {
+      document.querySelector('.js-modal-btn-queue').classList.toggle('visually-hidden');
+      document.querySelector('.js-modal-btn-remove-queue').classList.toggle('visually-hidden');
     }
 
     document.querySelector('.js-modal-btn-queue').addEventListener('click', onQueueAdd);

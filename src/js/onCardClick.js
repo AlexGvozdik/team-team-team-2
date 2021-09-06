@@ -25,13 +25,6 @@ function onOpenModal(id) {
 
   fetchAPI.searchByMovieId(id).then(movie => {
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
-    
-    // const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
-    // const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
-    // if (w) {
-    //   document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
-    //   document.querySelector('.js-modal-btn-remove-watched').classList.toggle('visually-hidden');
-    // }
 
     document.querySelector('.js-modal-btn-watched').addEventListener('click', onWatchedAdd);
     async function onWatchedAdd(event) {

@@ -1,5 +1,4 @@
 import teamTpl from '../templates/teamTpl.hbs';
-import modalAppearanceToggle from './modalAppearanceToggle';
 
 const refs = {
   devLink: document.querySelector('.goit-link'),
@@ -84,31 +83,27 @@ const team = [
 
 refs.devLink.addEventListener('click', clickOnLink);
 refs.closeBtn.addEventListener('click', closeBtn);
-document.addEventListener('keydown', closeModalEsc);
 refs.modalBackdrop.addEventListener('click', closeModalBackdrop);
+document.addEventListener('keydown', closeModalEsc);
 
 function clickOnLink() {
   refs.modalBackdrop.classList.remove('is-hidden');
   refs.modalConteiner.insertAdjacentHTML('beforeend', teamTpl(team));
 }
 
-function closeBtn(e) {
-  //   refs.modalBackdrop.classList.add('is-hidden');
-  //   document.body.classList.toggle('modal-open');
+function closeBtn() {
+  refs.modalBackdrop.classList.add('is-hidden');
   refs.modalConteiner.innerHTML = '';
-  e.stopPropagation();
-  modalAppearanceToggle();
 }
 
-// function closeModalEsc(e) {
-//   if (e.key === 'Escape') {
-//     refs.modalConteiner.innerHTML = '';
-//     modalAppearanceToggle();
-//   }
-// }
-
-function closeModalBackdrop(e) {
+function closeModalBackdrop() {
+  refs.modalBackdrop.classList.add('is-hidden');
   refs.modalConteiner.innerHTML = '';
-  e.stopPropagation();
-  modalAppearanceToggle();
+}
+
+function closeModalEsc(e) {
+  if (e.key === 'Escape') {
+    refs.modalBackdrop.classList.add('is-hidden');
+    refs.modalConteiner.innerHTML = '';
+  }
 }

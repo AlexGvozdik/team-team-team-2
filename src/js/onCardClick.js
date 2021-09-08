@@ -24,10 +24,18 @@ function onOpenModal(id) {
   document.body.classList.add('modal-open');
   
   fetchAPI.searchByMovieId(id).then(async movie => {
-    refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
-    
+    refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates({...movie, poster_path: movie.poster_path  ?  `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://iteam-by-goit.github.io/filmoteka/onerror.jpg'}));
+    const result = await firebaseAPI.getAllWatchedMovies()
+    if (result) {
+      const movieId = Object.keys(result).reverse()[0]
+      document.querySelector('.js-modal-btn-remove-watched').setAttribute('data-id', movieId)
+    }
+    const result2 = await firebaseAPI.getAllQueuedMovies()
+    if (result2) {
+      const movieId2 = Object.keys(result2).reverse()[0]
+      document.querySelector('.js-modal-btn-remove-queue').setAttribute('data-id', movieId2)
+    }
     const token = localStorage.getItem('user-token')
-    
     const watched = await firebaseAPI.checkWatchedMovies(movie);
     const queued = await firebaseAPI.checkQueuedMovies(movie);
     
@@ -44,9 +52,6 @@ function onOpenModal(id) {
       event.target.classList.toggle('visually-hidden');
       event.target.nextElementSibling.classList.toggle('visually-hidden');
       await firebaseAPI.addMovieWatched(movie)
-      const result = await firebaseAPI.getAllWatchedMovies()
-      const movieId = Object.keys(result).reverse()[0]
-      event.target.nextElementSibling.setAttribute('data-id',`${movieId}`)
     }
 
     document
@@ -86,6 +91,7 @@ function onOpenModal(id) {
       }
       event.target.classList.toggle('visually-hidden');
       event.target.previousElementSibling.classList.toggle('visually-hidden');
+      const id = event.target.dataset.id
       await firebaseAPI.removeMovieQueued(id)
     }
   });

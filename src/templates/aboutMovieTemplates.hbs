@@ -2,9 +2,8 @@
   <div class='wrapper-img'>
     <img 
       class='js-card-img' 
-      src='https://image.tmdb.org/t/p/w500{{poster_path}}' 
+      src='{{poster_path}}' 
       alt='moviе poster: {{title}}'
-      onerror="this.onerror=null;this.src='./onerror.jpg';" 
     />
   </div>
   <div class='modal-right-part'>
@@ -42,7 +41,7 @@
       <button class='modal-btn modal-btn-watched js-modal-btn-watched' type='button'>add to watched</button>
       <button
         class='visually-hidden modal-btn modal-btn-remove modal-btn-remove-watched js-modal-btn-remove-watched'
-        type='button'
+        type='button' data-id='{{id}}'
       >remove from watched</button>
       <button class='modal-btn modal-btn-queue js-modal-btn-queue' type='button'>add to queue</button>
       <button

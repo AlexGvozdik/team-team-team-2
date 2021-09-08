@@ -1,55 +1,41 @@
-html,
-html[data-theme='light-theme'] {
-  .home-main-bgimage {
-    background: url(../images/bg-images-library/cinema__light.jpg);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
-html[data-theme='dark-theme'] {
-  .home-main-bgimage {
-    background: url(../images/bg-images-library/cinema__dark.jpg);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
-.theme-switcher {
+.lang-switcher {
   position: absolute;
-  top: 110px;
-  right: 50%;
+  top: 0px;
+  right: 0;
   @media screen and (min-width: 768px) {
-    top: 45px;
-    right: 94%;
+    top: 0px;
+    right: 0;
   }
   @media screen and (min-width: 1200px) {
-    top: 45px;
-    right: 89%;
+    top: 10px;
+    right: 200px;
   }
 }
 
-.theme-switch__input,
-.theme-switch__label {
+.lang-switch__input,
+.lang-switch__label {
   position: absolute;
   z-index: 1;
   cursor: pointer;
 }
 
-.theme-switch__input {
+.lang-switch__input {
   opacity: 0;
 
   &:hover,
   &:focus {
-    + .theme-switch__label {
+    + .lang-switch__label {
       background-color: #e8cfc061;
     }
 
-    + .theme-switch__label span::after {
+    + .lang-switch__label span::after {
       background-color: lighten(#ffffff61, 10%);
     }
   }
 }
 
-.theme-switch__label {
+.lang-switch__label {
   padding: 13px;
-  margin: 60px;
   transition: background-color 0.5s ease-in-out;
   width: 55px;
   height: 3px;
@@ -64,20 +50,6 @@ html[data-theme='dark-theme'] {
     position: absolute;
     transform: translate3d(0, -50%, 0);
     top: 50%;
-  }
-
-  &::before {
-    content: '\263C';
-    right: 100%;
-    margin-right: 10px;
-    color: #ff6b08;
-  }
-
-  &::after {
-    content: '\263E';
-    left: 100%;
-    margin-left: 10px;
-    color: lightSlateGray;
   }
 
   .circle {
@@ -101,7 +73,7 @@ html[data-theme='dark-theme'] {
   }
 }
 
-.theme-switch__input:checked ~ .theme-switch__label {
+.lang-switch__input:checked ~ .lang-switch__label {
   background-color: lightSlateGray;
 
   &::before {
@@ -115,4 +87,8 @@ html[data-theme='dark-theme'] {
   .circle::after {
     transform: translate3d(30px, 0, 0);
   }
+}
+
+.lang {
+  color: #fff;
 }

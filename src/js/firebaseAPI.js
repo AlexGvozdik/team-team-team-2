@@ -33,6 +33,19 @@ export default {
         }
         return include;
     },
+
+     async includeWatchedById(id) {
+        const response = await axios.get(`https://film-proj-default-rtdb.firebaseio.com/watchedMovies.json`);
+        const result = response.data ? Object.values(response.data) : "";
+         let include;
+         
+        if (result) {
+            include = result.find(film => film.id === +id) 
+            return include;
+        }
+        return include;
+    },// запрос на очередь по ID
+     
     async addMovieQueued(movieAdded) {
         try {
             await axios.post(`https://film-proj-default-rtdb.firebaseio.com/queuedMovies.json`, movieAdded);
@@ -64,6 +77,17 @@ export default {
             return include;
         }
         return false;
-    }
+    },
+    async includeQueuedById(id) {
+        const response = await axios.get(`https://film-proj-default-rtdb.firebaseio.com/queuedMovies.json`);
+        const result = response.data ? Object.values(response.data) : "";
+        let include;
+        if (result) {
+            include = result.find(film => film.id === id)
+            return include;
+        }
+        return include;
+    },// запрос по ID на очередь
+
 }
 

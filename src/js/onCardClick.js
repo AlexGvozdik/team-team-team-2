@@ -4,17 +4,47 @@ import myError from './customAlert';
 import refs from './refs';
 import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
 import { closeOnClick, modalKeypressEsc } from './modalClose';
+import { toggleActiveBtn } from './toggleActiveBtn';
 
 refs.galleryList.addEventListener('click', onCardClick);
 
-function onCardClick(eve) {
+async function onCardClick(eve) {
   const isCardMovie = eve.target.closest('.gallery-items');
+  const checkBtn = eve.target.classList.contains('one-card_overlay');
+  const token = localStorage.getItem('user-token');
+  const index = isCardMovie.dataset.index;// ID фильма
+  const watched = await firebaseAPI.includeWatchedById(index);
+  const queued = await firebaseAPI.includeQueuedById(index);
+  console.log(index);
+ function onHandlerAdd (event) {
+      if (!token) {
+        myError('please SIGN IN')
+        return false
+      }
+      event.target.classList.toggle('visually-hidden');
+    event.target.nextElementSibling.classList.toggle('visually-hidden');
+   fetchAPI.searchByMovieId(index).then(async movie => await firebaseAPI.addMovieWatched(movie));
+      
+    }
   if (!isCardMovie) {
     return;
   }
+  if (eve.target.tagName === 'BUTTON' || checkBtn) {
+    console.log(token);
+    console.log(watched);
+    if (watched && token) {
+      toggleActiveBtn();
+      }
+      document.querySelector('.js-modal-btn-remove-watched').addEventListener('click', onHandlerAdd);
+    return false;
+  } // для оверлея
+
     const idMovie = isCardMovie.dataset.index;
   onOpenModal(idMovie);
 }
+
+
+
 
 function onOpenModal(id) {
   document.addEventListener('keydown', modalKeypressEsc);
@@ -24,6 +54,7 @@ function onOpenModal(id) {
   document.body.classList.add('modal-open');
   
   fetchAPI.searchByMovieId(id).then(async movie => {
+    console.log(movie);
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates({...movie, poster_path: movie.poster_path  ?  `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://iteam-by-goit.github.io/filmoteka/onerror.jpg'}));
     const result = await firebaseAPI.getAllWatchedMovies()
     if (result) {

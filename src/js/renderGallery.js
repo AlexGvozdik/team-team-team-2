@@ -49,8 +49,9 @@ async function renderSearchResult(query, page) {
 }
 
 async function render(data) {
+  const newData = data.map(item=> ({...item, poster_path: item.poster_path  ?  `https://image.tmdb.org/t/p/w500${item.poster_path}` : 'https://iteam-by-goit.github.io/filmoteka/onerror.jpg'}))
   const genres = await fetchAPI.getGenres().then(list => { return list.genres });
-  const result = await renderGalleryMarkup(data, genres);
+  const result = await renderGalleryMarkup(newData, genres);
   const cardsGallery = movieItemTpl(result);
   refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
 }

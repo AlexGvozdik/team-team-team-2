@@ -1,4 +1,6 @@
 export default {
+  btnWatchedRemove: document.querySelector('.js-modal-btn-remove-watched'),
+  btnQueuedRemove: document.querySelector('js-modal-btn-remove-queue'),
   searchInput: document.querySelector('.js-search-control'),
   searchForm: document.querySelector('.js-search-form'),
   linkMyLibrary: document.querySelector('.js-lib_page'),

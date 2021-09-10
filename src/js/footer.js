@@ -1,11 +1,35 @@
-const showFooter = document.querySelector('.footer-js');
+const refs = {
+    showFooter:document.querySelector('.footer-js'),
+    header:document.querySelector('.js-header'),
+    library:document.querySelector('.js-lib_page'),
+    home:document.querySelector('.js-home_page'),
+}
 
-window.addEventListener('scroll', showFooterOnScroll);
+
+
+if (refs.header.classList.contains('header-container_home')) {
+  window.addEventListener('scroll', showFooterOnScroll);
+}
+
+refs.library.addEventListener('click', showFooterOnLib);
+refs.home.addEventListener('click', showFooterOnHome);
 
 function showFooterOnScroll() {
-        if (window.pageYOffset < document.documentElement.clientHeight) {
-            showFooter.classList.remove('show-footer');
-        } else {
-            showFooter.classList.add('show-footer');
-        }
+    
+
+  if (window.pageYOffset < document.documentElement.clientHeight) {
+    refs.showFooter.classList.remove('show-footer');
+  } else {
+    refs.showFooter.classList.add('show-footer');
+  }
 }
+
+function showFooterOnLib() {
+  refs.showFooter.classList.remove('footer');
+  refs.showFooter.classList.add('footer-library');
+}
+
+function showFooterOnHome() {
+    refs.showFooter.classList.remove('footer-library');
+    refs.showFooter.classList.add('footer');
+  }

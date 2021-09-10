@@ -29,6 +29,7 @@ html[data-theme='dark-theme'] {
 .theme-switch__label {
   position: absolute;
   z-index: 1;
+  cursor: pointer;
 }
 
 .theme-switch__input {

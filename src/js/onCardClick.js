@@ -4,7 +4,7 @@ import myError from './customAlert';
 import refs from './refs';
 import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
 import { closeOnClick, modalKeypressEsc } from './modalClose';
-import { toggleActiveBtn } from './toggleActiveBtn';
+import { toggleActiveBtnWatched, toogleActiveBtnQueued } from './toggleActiveBtn';
 
 refs.galleryList.addEventListener('click', onCardClick);
 
@@ -15,7 +15,7 @@ async function onCardClick(eve) {
   const index = isCardMovie.dataset.index;// ID фильма
   const watched = await firebaseAPI.includeWatchedById(index);
   const queued = await firebaseAPI.includeQueuedById(index);
-  console.log(index);
+ 
  function onHandlerAdd (event) {
       if (!token) {
         myError('please SIGN IN')
@@ -25,25 +25,45 @@ async function onCardClick(eve) {
     event.target.nextElementSibling.classList.toggle('visually-hidden');
    fetchAPI.searchByMovieId(index).then(async movie => await firebaseAPI.addMovieWatched(movie));
       
-    }
+    } // проверка логина и добавление фильма в просмотренные
+ function onHandlerRemove (event) {
+  event.target.classList.toggle('visually-hidden');
+  event.target.previousElementSibling.classList.toggle('visually-hidden');
+  const id = event.target.dataset.id;
+  fetchAPI.searchByMovieId(id).then(async movie => await firebaseAPI.removeMovieWatched(movie));
+ } // удаление фильма из просмотренного(по идее)
   if (!isCardMovie) {
     return;
-  }
+  }// проверка места клика
   if (eve.target.tagName === 'BUTTON' || checkBtn) {
-    console.log(token);
-    console.log(watched);
-    if (watched && token) {
-      toggleActiveBtn();
-      }
-      document.querySelector('.js-modal-btn-remove-watched').addEventListener('click', onHandlerAdd);
-    return false;
-  } // для оверлея
+       if (watched && token) {
+      toggleActiveBtnWatched();
+      }// проверка логина и наличия фильма в просмотрах
+      document.querySelector('.js-modal-btn-watched').addEventListener('click', onHandlerAdd);//прослушка на добавление
+      document.querySelector('.js-modal-btn-remove-watched').addEventListener('click', onHandlerRemove);// прослушка на удаление
+   
+      if(queued){
+      toogleActiveBtnQueued();
+    }//проверка на наличие в очереди
 
-    const idMovie = isCardMovie.dataset.index;
+    document.querySelector('.js-modal-btn-queue').addEventListener('click', onQueueAdd);//прослушка на кнопку добавление очереди
+    document.querySelector('.js-modal-btn-remove-queue').addEventListener('click', onQueueRemove);//прослушка на кнопку удаления с очереди 
+    return false;
+  } // проверка клика на кнопки в оверлее и прослушки
+
+    const idMovie = isCardMovie.dataset.index;//дубляж? стр15
   onOpenModal(idMovie);
 }
 
-
+// document
+// .querySelector('.js-modal-btn-remove-watched')
+// .addEventListener('click', onWatchedRemove);
+// async function onWatchedRemove(event) {
+// event.target.classList.toggle('visually-hidden');
+// event.target.previousElementSibling.classList.toggle('visually-hidden');
+// const id = event.target.dataset.id
+// await firebaseAPI.removeMovieWatched(id)
+// }
 
 
 function onOpenModal(id) {

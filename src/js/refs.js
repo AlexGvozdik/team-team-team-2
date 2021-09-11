@@ -28,8 +28,20 @@ export default {
   anchor: document.querySelector('.anchor'),
   trailerBackdrop: document.querySelector('.js-backdrop-trailer'),
   trailerIframe: document.querySelector('.js-trailer'),
+  btnAuthentication: document.querySelector('.btn-authentication'),
+  btnActionLogin: document.querySelector('.btn-action-login'),
+  btnSecondary: document.querySelector('.btn-secondary'),
+  // modalBtnWached: document.querySelector('.js-modal-btn-watched'),
+  // modalSecondaryTitle:document.querySelector('.modal-secondary-title'),
+
 
   modalFooter:document.querySelector('.backdrop-dev'),
   devLink: document.querySelector('.goit-link'),
-  btnClose:document.querySelector('.button-close')
+  btnClose:document.querySelector('.button-close'),
+
+  body: document.querySelector('body'),
+  switcher: document.querySelector('.lang-switch__input'),
+  footerRights: document.querySelector('.footer-rights'),
+  fooDev: document.querySelector('.foo-dev-js'),
+  goItLink: document.querySelector('.goit-link'),
 };

@@ -3,6 +3,7 @@ import firebaseAPI from './firebaseAPI';
 import myError from './customAlert';
 import refs from './refs';
 import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
+// import aboutMovieTemplatesRu from '../templates/aboutMovieTemplatesRu.hbs';
 import { closeOnClick, modalKeypressEsc } from './modalClose';
 
 refs.galleryList.addEventListener('click', onCardClick);
@@ -97,3 +98,16 @@ function onOpenModal(id) {
   });
 
 }
+
+
+
+
+
+// function renderAboutMovieLang () {
+//   let currentPageLanguage = localStorage.getItem('language');
+//   if (currentPageLanguage === 'en-US') {
+//     aboutMovieTemplates
+//   } else if (currentPageLanguage === 'ru-RU') {
+//     aboutMovieTemplatesRu
+//   }
+// }

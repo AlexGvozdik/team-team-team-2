@@ -20,8 +20,8 @@ html[data-theme='dark-theme'] {
     right: 94%;
   }
   @media screen and (min-width: 1200px) {
-    top: 45px;
-    right: 89%;
+    top: 80px;
+    right: 85%;
   }
 }
 
@@ -49,7 +49,7 @@ html[data-theme='dark-theme'] {
 
 .theme-switch__label {
   padding: 13px;
-  margin: 60px;
+  // margin: 60px;
   transition: background-color 0.5s ease-in-out;
   width: 55px;
   height: 3px;

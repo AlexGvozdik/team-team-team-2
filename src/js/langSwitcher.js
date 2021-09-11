@@ -1,35 +1,39 @@
 import moviesAPI from '../services/movies-api';
 import renameAll from './renameAll';
-
-const refs = {
-  en: document.querySelector('.lang-en'),
-  ru: document.querySelector('.lang-ru'),
-  body: document.querySelector('body'),
-};
+import refs from './refs.js';
 
 const language = {
   en: 'en-US',
   ru: 'ru-RU',
 };
 
-refs.ru.addEventListener('click', changeLangToRu);
+refs.switcher.addEventListener('click', changeLanguage);
 
-// function localLangInit () {
-//     if (localStorage.getItem('language') === null) {
-//         fetchAPI.language = language.en;
-//         localStorage.setItem('language', fetchAPI.language);
-//       } else {
-//         fetchAPI.language = localStorage.getItem('language');
-//       }
-// }
+(function initLanguage() {
+  if (localStorage.getItem('language') === null) {
+    moviesAPI.language = language.en;
+    localStorage.setItem('language', moviesAPI.language);
+  } else {
+    moviesAPI.language = localStorage.getItem('language');
+  }
+  refs.switcher.checked = moviesAPI.language === language.en ? false : true;
 
-// function changeLangToRu() {
-//   moviesAPI.language = language.ru;
-//   localStorage.setItem('language', moviesAPI.language);
-//   renameAll();
+  renameAll(moviesAPI.language);
+})();
 
-//   // if (moviesAPI.language === language.en) {
-//   //     moviesAPI.language = language.ru;
-//   //     localStorage.setItem('language', moviesAPI.language);
-//   // }
-// }
+function changeLanguage() {
+  let oldLanguage = localStorage.getItem('language');
+
+  if (moviesAPI.language === language.en) {
+    moviesAPI.language = language.ru;
+    localStorage.setItem('language', moviesAPI.language);
+    refs.body.classList.replace(oldLanguage, moviesAPI.language);
+    refs.switcher.checked = true;
+  } else {
+    moviesAPI.language = language.en;
+    localStorage.setItem('language', moviesAPI.language);
+    refs.body.classList.replace(oldLanguage, moviesAPI.language);
+    refs.switcher.checked = false;
+  }
+  renameAll(moviesAPI.language);
+}

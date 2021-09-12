@@ -13,15 +13,15 @@ html[data-theme='dark-theme'] {
 }
 .theme-switcher {
   position: absolute;
-  top: 110px;
-  right: 50%;
+  top: 164px;
+  left: 65%;
   @media screen and (min-width: 768px) {
-    top: 45px;
-    right: 94%;
+    top: 90px;
+    left: 14%;
   }
   @media screen and (min-width: 1200px) {
-    top: 80px;
-    right: 85%;
+    top: 85px;
+    left: 16%;
   }
 }
 

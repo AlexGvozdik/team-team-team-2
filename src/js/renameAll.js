@@ -7,7 +7,7 @@ export default function renameAll(language) {
     refs.linkMyLibrary.textContent = 'Избранное';
     refs.watchedLibrary.textContent = 'Просмотренное';
     refs.queueLibrary.textContent = 'Отложенные';
-    refs.btnAuthentication.textContent = 'Регистрация | Вход';
+    // refs.btnAuthentication.textContent = 'Регистрация | Вход';
     refs.footerRights.textContent = '2021 | Все права защищены |';
     refs.fooDev.textContent = 'Разработано с';
     refs.goItLink.textContent = 'студентами GoIT';
@@ -22,7 +22,7 @@ export default function renameAll(language) {
     refs.linkMyLibrary.textContent = 'My library';
     refs.watchedLibrary.textContent = 'Watched';
     refs.queueLibrary.textContent = 'Queue';
-    refs.btnAuthentication.textContent = 'Sign UP | Log in';
+    // refs.btnAuthentication.textContent = 'Sign UP | Log in';
     refs.footerRights.textContent = '2021 | All Rights Reserved |';
     refs.fooDev.textContent = 'Developed with';
     refs.goItLink.textContent = 'by GoIT Students';

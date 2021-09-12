@@ -124,7 +124,6 @@ function onOpenModal(id) {
     } else if (currentPageLanguage === 'ru-RU') {
       refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplatesRu({...movie, poster_path: movie.poster_path  ?  `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://iteam-by-goit.github.io/filmoteka/onerror.jpg'}));
   }
-    // refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates({...movie, poster_path: movie.poster_path  ?  `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://iteam-by-goit.github.io/filmoteka/onerror.jpg'}));
     const result = await firebaseAPI.getAllWatchedMovies()
     if (result) {
       const movieId = Object.keys(result).reverse()[0]
@@ -195,26 +194,4 @@ function onOpenModal(id) {
       await firebaseAPI.removeMovieQueued(id)
     }
   });
-
 }
-
-
-
-
-
-// function renderAboutMovieLang () {
-//   let currentPageLanguage = localStorage.getItem('language');
-//   if (currentPageLanguage === 'en-US') {
-//     aboutMovieTemplates
-//   } else if (currentPageLanguage === 'ru-RU') {
-//     aboutMovieTemplatesRu
-//   }
-// }
-
-// let currentPageLanguage = localStorage.getItem('language');
-
-//     if (currentPageLanguage === 'en-US') {
-//       movieGenreArraySlice.push('...Other');
-//     } else if (currentPageLanguage === 'ru-RU') {
-//       movieGenreArraySlice.push('...Другие');
-//     }

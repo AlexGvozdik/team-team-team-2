@@ -18,7 +18,7 @@ import './js/onCardClick';
 import './js/infiniteScroll';
 import './js/modal-footer';
 
-
+import '../codelab-friendlychat-web/web-start/src/index'
 
 // const refs = {
 //   linkHome: document.querySelector('.home-js'),

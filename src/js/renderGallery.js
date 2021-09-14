@@ -4,6 +4,7 @@ import fetchAPI from '../services/movies-api';
 import myError from './customAlert';
 import refs from './refs';
 
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
 });

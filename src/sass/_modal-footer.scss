@@ -24,7 +24,7 @@
     @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
-    // Добавить в общие стили
+
     list-style: none;
     margin: 0;
     padding: 0;
@@ -74,13 +74,6 @@
   margin-top: 10px;
   color: #545454;
 
-  li {
-    // width: 30px;
-    // height: 30px;
-    // border-radius: 50%;
-    // background-color: rgb(247, 128, 18);
-  }
-
   li:not(:last-child) {
     margin-right: 10px;
   }
@@ -99,19 +92,10 @@
   a:focus {
     background-color: rgb(247, 128, 18, 90%);
     transform: scale(1.2);
-    // background-color: #000;
-    // fill: #fff;
   }
 
   svg {
     margin: auto;
-    // border-radius: 50%;
-    // border: none;
-  }
-
-  svg:hover {
-    // background-color: rgb(247, 128, 18);
-    // fill: #fff;
   }
 }
 .card__icon {

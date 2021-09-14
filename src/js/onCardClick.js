@@ -1,4 +1,4 @@
-import fetchAPI from '../services/movies-api';
+import axiosAPI from '../services/movies-api';
 import firebaseAPI from './firebaseAPI';
 import myError from './customAlert';
 import refs from './refs';
@@ -117,6 +117,7 @@ function onOpenModal(id) {
   refs.modalBackdrop.classList.remove('is-hidden');
   document.body.classList.add('modal-open');
   
+
   fetchAPI.searchByMovieId(id).then(async movie => {
     let currentPageLanguage = localStorage.getItem('language');
     if (currentPageLanguage === 'en-US') {

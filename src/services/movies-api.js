@@ -100,7 +100,7 @@ export default {
     if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
   },
   
@@ -109,7 +109,7 @@ export default {
     if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
     
   },
@@ -119,7 +119,7 @@ export default {
     if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
   },
 
@@ -128,7 +128,7 @@ export default {
     if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
   },
 
@@ -137,7 +137,7 @@ export default {
     if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
   },
 
@@ -146,7 +146,7 @@ export default {
     if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
   },
    
@@ -155,7 +155,7 @@ export default {
     if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
   },
 
@@ -166,7 +166,7 @@ export default {
       if (response.status === 200) {
       return await response.data;
     }
-    myError('Unsuccessful results.Try again!')
+    // myError('Unsuccessful results.Try again!')
     throw new Error('Something went wrong')
     // if (response.status !== 200) {
     //   myError('Unsuccessful results.Try again!')

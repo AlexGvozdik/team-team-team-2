@@ -12,10 +12,14 @@ document.body.onload = () => {
 
 export const spinnerMethod = {
   removeSpinner: function () {
-    setTimeout(preloader.classList.add('preloader-js'), 500);
+    setTimeout(() => {
+      preloader.classList.add('preloader-js')
+      // refs.body.classList.remove('modal-open-preloader');
+    }, 400);
   },
   addSpinner: function () {
     preloader.classList.remove('preloader-js');
+    // refs.body.classList.add('modal-open-preloader');
   },
 };
 

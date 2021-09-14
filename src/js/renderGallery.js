@@ -1,8 +1,11 @@
 import movieItemTpl from '../templates/movieItemTpl.hbs';
+
 import movieItemTplRu from '../templates/movieItemTplRu.hbs';
 import fetchAPI from '../services/movies-api';
+
 import myError from './customAlert';
 import refs from './refs';
+import { spinnerMethod } from './spinner';
 
 document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
@@ -14,7 +17,7 @@ async function renderTrending(page = 1) {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
     }
-    const trends = await fetchAPI.fetchTrandingMovies(page).then(data => {
+    const trends = await axiosAPI.fetchTrandingMovies(page).then(data => {
       return data.results;
     });
     render(trends);
@@ -25,14 +28,15 @@ async function renderTrending(page = 1) {
 
 async function renderSearchResult(query, page) {
   refs.movieGallerySection.dataset.page = 'searching';
+  spinnerMethod.addSpinner();
   try {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
     }
-    const data = await fetchAPI.fetchMovie(query, page);
+    const data = await axiosAPI.fetchMovie(query, page);
     const results = data.results;
     if (results.length === 0 && page === 1) {
-      myError('Unsuccessful results. Try different query!');
+      // myError('Unsuccessful results. Try different query!');
       setTimeout(() => {
         refs.searchInput.value = '';
         const eventInput = new Event('input');
@@ -46,12 +50,16 @@ async function renderSearchResult(query, page) {
     render(results);
   } catch (e) {
     myError('Unsuccessful results. Try again!');
+  } finally {
+    setTimeout(() => {
+      spinnerMethod.removeSpinner()
+    },400)
   }
 }
 
 async function render(data) {
   const newData = data.map(item=> ({...item, poster_path: item.poster_path  ?  `https://image.tmdb.org/t/p/w500${item.poster_path}` : 'https://iteam-by-goit.github.io/filmoteka/onerror.jpg'}))
-  const genres = await fetchAPI.getGenres().then(list => { return list.genres });
+  const genres = await axiosAPI.getGenres().then(list => { return list.genres });
   const result = await renderGalleryMarkup(newData, genres);
   const cardsGallery = movieItemTpl(result);
   const cardsGalleryRu = movieItemTplRu(result);

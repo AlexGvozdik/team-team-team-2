@@ -58,7 +58,7 @@ const team = [
 
   {
     img: 'https://picua.org/images/2021/09/06/79fd3016aadfbbee93809e662e729c6a.jpg',
-    name: 'MITRIY GLEBOV',
+    name: 'DMITRIY GLEBOV',
     position: 'Developer',
     githubLink: 'https://github.com/CommanderCoolDev',
     linkedInLink: 'https://www.linkedin.com/in/dmitriy-glebov-9aa614210',

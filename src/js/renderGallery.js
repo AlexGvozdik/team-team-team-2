@@ -1,4 +1,5 @@
 import movieItemTpl from '../templates/movieItemTpl.hbs';
+import movieItemTplRu from '../templates/movieItemTplRu.hbs';
 import fetchAPI from '../services/movies-api';
 import myError from './customAlert';
 import refs from './refs';
@@ -53,7 +54,13 @@ async function render(data) {
   const genres = await fetchAPI.getGenres().then(list => { return list.genres });
   const result = await renderGalleryMarkup(newData, genres);
   const cardsGallery = movieItemTpl(result);
-  refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+  const cardsGalleryRu = movieItemTplRu(result);
+  let currentPageLanguage = localStorage.getItem('language');
+  if (currentPageLanguage === 'en-US') {
+    refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+  } else if (currentPageLanguage === 'ru-RU') {
+    refs.galleryList.insertAdjacentHTML('beforeend', cardsGalleryRu);
+  }
 }
 
 function renderGalleryMarkup(data, list) {
@@ -91,7 +98,7 @@ function createGenres(obj, list) {
     movieGenreArraySlice = mapedGenres;
   } else {
     movieGenreArraySlice = mapedGenres.slice(0, 2);
-    movieGenreArraySlice.push('Other');
+    movieGenreArraySlice.push('...');
   }
   return movieGenreArraySlice.join(', ');
 }

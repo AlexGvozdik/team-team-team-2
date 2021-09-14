@@ -9,7 +9,7 @@ import './js/infiniteScroll';
 import './js/modal-authentication';
 import './js/theme-switcher';
 import './js/up-btn';
-// import './js/langSwitcher';
+import './js/langSwitcher';
 import './js/modalClose';
 import './js/footer';
 import './js/modal-footer';

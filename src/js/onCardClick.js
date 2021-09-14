@@ -47,6 +47,7 @@ function onOpenModal(id) {
       const result = await firebaseAPI.getAllWatchedMovies()
       const movieId = Object.keys(result).reverse()[0]
       event.target.nextElementSibling.setAttribute('data-id',`${movieId}`)
+      
     }
 
     document

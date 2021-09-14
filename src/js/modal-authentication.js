@@ -53,15 +53,6 @@ function onClickbtnLogin() {
                 refs.txtPassword.value = '';
             }
         });
-    // auth.infoEmail(email, password)
-    // .then(mail => {
-    //         if (mail) {
-    //             successfulLogin(mail);
-    //         } else {
-    //             refs.txtEmail.value = '';
-    //             refs.txtPassword.value = '';
-    //         }
-    //     });
 }
 
 function onClickbtnSignUp() {
@@ -96,7 +87,7 @@ function successfulLogin() {
     const email = localStorage.getItem('email')
     const modifiedName = email.split('@')[0]
     refs.btnOpenModalAuthentication.textContent = `Hi ${modifiedName}`;
-    refs.greeting.textContent = `Welcome ${modifiedName} , do you really wanna `;
+    refs.greeting.textContent = `Welcome ${modifiedName.toUpperCase()} , do you really wanna `;
 
     refs.btnLogin.classList.add('disabled-btn');
     refs.btnSignUp.classList.add('disabled-btn');

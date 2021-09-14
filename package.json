@@ -44,6 +44,7 @@
     "email-validator": "^2.0.4",
     "firebase": "^9.0.1",
     "lodash.debounce": "^4.0.8",
-    "lodash.throttle": "^4.1.1"
+    "lodash.throttle": "^4.1.1",
+    "material-ui": "^0.20.2"
   }
 }

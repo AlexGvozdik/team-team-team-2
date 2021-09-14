@@ -4,6 +4,7 @@ import { renderFromFirebaseAPI } from './renderFromFirebaseAPI';
 
 export function closeOnClick(e) {
   if (e.target.closest('.js-close-btn') || e.target === refs.modalBackdrop) {
+    refs.modalBackdrop.classList.add('is-hidden');
     refs.cardContainer.innerHTML = '';
     e.stopPropagation();
     modalAppearanceToggle();

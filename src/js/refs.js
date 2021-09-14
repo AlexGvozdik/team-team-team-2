@@ -1,4 +1,5 @@
 export default {
+  body:document.querySelector('body'),
   btnWatchedRemove: document.querySelector('.js-modal-btn-remove-watched'),
   btnQueuedRemove: document.querySelector('js-modal-btn-remove-queue'),
   searchInput: document.querySelector('.js-search-control'),
@@ -33,3 +34,4 @@ export default {
   devLink: document.querySelector('.goit-link'),
   btnClose:document.querySelector('.button-close')
 };
+

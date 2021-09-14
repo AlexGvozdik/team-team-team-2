@@ -1,4 +1,4 @@
-import fetchAPI from '../services/movies-api';
+import axiosAPI from '../services/movies-api';
 import firebaseAPI from './firebaseAPI';
 import myError from './customAlert';
 import refs from './refs';
@@ -23,7 +23,7 @@ function onOpenModal(id) {
   refs.modalBackdrop.classList.remove('is-hidden');
   document.body.classList.add('modal-open');
   
-  fetchAPI.searchByMovieId(id).then(async movie => {
+  axiosAPI.searchByMovieId(id).then(async movie => {
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates({...movie, poster_path: movie.poster_path  ?  `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://iteam-by-goit.github.io/filmoteka/onerror.jpg'}));
     const result = await firebaseAPI.getAllWatchedMovies()
     if (result) {

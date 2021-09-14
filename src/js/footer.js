@@ -16,11 +16,13 @@ refs.home.addEventListener('click', showFooterOnHome);
 
 function showFooterOnScroll() {
     
-
+  
   if (window.pageYOffset < document.documentElement.clientHeight) {
     refs.showFooter.classList.remove('show-footer');
   } else {
     refs.showFooter.classList.add('show-footer');
+    refs.showFooter.classList.add('footer');
+
   }
 }
 
@@ -31,5 +33,4 @@ function showFooterOnLib() {
 
 function showFooterOnHome() {
     refs.showFooter.classList.remove('footer-library');
-    refs.showFooter.classList.add('footer');
   }

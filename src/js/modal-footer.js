@@ -89,21 +89,25 @@ document.addEventListener('keydown', closeModalEsc);
 function clickOnLink() {
   refs.modalBackdrop.classList.remove('is-hidden');
   refs.modalConteiner.insertAdjacentHTML('beforeend', teamTpl(team));
+  document.body.classList.add('modal-open');
 }
 
 function closeBtn() {
   refs.modalBackdrop.classList.add('is-hidden');
   refs.modalConteiner.innerHTML = '';
+  document.body.classList.remove('modal-open');
 }
 
 function closeModalBackdrop() {
   refs.modalBackdrop.classList.add('is-hidden');
   refs.modalConteiner.innerHTML = '';
+  document.body.classList.remove('modal-open');
 }
 
 function closeModalEsc(e) {
   if (e.key === 'Escape') {
     refs.modalBackdrop.classList.add('is-hidden');
     refs.modalConteiner.innerHTML = '';
+    document.body.classList.remove('modal-open');
   }
 }

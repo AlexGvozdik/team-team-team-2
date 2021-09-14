@@ -1,6 +1,7 @@
 import moviesAPI from '../services/movies-api';
 import renameAll from './renameAll';
 import refs from './refs.js';
+import { renderTrending } from './renderGallery.js';
 
 const language = {
   en: 'en-US',
@@ -19,6 +20,7 @@ refs.switcher.addEventListener('click', changeLanguage);
   refs.switcher.checked = moviesAPI.language === language.en ? false : true;
 
   renameAll(moviesAPI.language);
+  renderTrending();
 })();
 
 function changeLanguage() {
@@ -36,4 +38,10 @@ function changeLanguage() {
     refs.switcher.checked = false;
   }
   renameAll(moviesAPI.language);
+
+  if (refs.linkHome.classList.contains('current')){
+    renderTrending();
+  }
+
+  
 }

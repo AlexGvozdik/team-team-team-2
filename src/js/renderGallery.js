@@ -7,6 +7,7 @@ import myError from './customAlert';
 import refs from './refs';
 import { spinnerMethod } from './spinner';
 
+
 document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
 });

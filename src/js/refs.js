@@ -32,6 +32,9 @@ export default {
   btnAuthentication: document.querySelector('.btn-authentication'),
   btnActionLogin: document.querySelector('.btn-action-login'),
   btnSecondary: document.querySelector('.btn-secondary'),
+  btnGalleryItemWatched: document.querySelector('.btn-gallery-item-watched'),
+  btnGalleryItemLater: document.querySelector('.btn-gallery-item-later'),
+
   // modalBtnWached: document.querySelector('.js-modal-btn-watched'),
   // modalSecondaryTitle:document.querySelector('.modal-secondary-title'),
 

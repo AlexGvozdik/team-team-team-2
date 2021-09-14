@@ -9,9 +9,9 @@
 
 /* ===========COMPONENTS============================ */
 @import './btn-authentication/btn-authentication';
-@import './components//modal';
-@import './components//modal-movie';
 @import './components/backdrop';
+@import './components//modal';
+
 @import './components/button';
 @import './components/modal-close-btn';
 @import './components/up-btn';
@@ -27,14 +27,15 @@
 @import './footer';
 @import './modal-authentication/modal-authentication';
 @import './layouts/modal-movie';
+// @import './layouts/modal-content';
 @import './layouts/gallery-notification';
-@import './layouts/card-overlay';
+// @import './layouts/card-overlay';
 
+// @import './components//modal-movie';
 // @import './base-styles';
-@import './modal-footer';
+// @import './modal-footer';
 // @import './layouts/gallery-card';
 // @import './components/modal-close-btn';
-// @import './layouts/modal-content';
 // @import './layouts/modal';
 // @import './layouts/movie-cards';
 

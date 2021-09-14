@@ -10,6 +10,18 @@
       content="Filmoteka, movie library, film catalog, new films, movie rating, information about films"
     />
     <title>Filmoteka</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
@@ -30,14 +42,10 @@
       rel="stylesheet"
       type="text/css"
     />
-
   </head>
   <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <include src="./partials/header.html"></include>
-
     <main class='home-main-bgimage'>
-      <!-- <h1 class="visually-hidden">Movie library</h1> -->
       <section class="movie-gallery movie-gallery-js" data-page="trending">
         <div class="container">
           <ul class="gallery-list list js-gallery-list"></ul>
@@ -52,8 +60,8 @@
     <include src="./partials/authBtn/authBtn.html"></include>
     <include src="./partials/modal-window-authentication/modal-window-authentication.html"></include>
     <include src="./partials/gallery-card.html"></include>
-    <include src="./partials/footer.html"></include>
     <include src="./partials/modal.html"></include>
+    <include src="./partials/footer.html"></include>
     <include src="./partials/spinner.html"></include>
 
 

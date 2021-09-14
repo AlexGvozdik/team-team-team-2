@@ -88,6 +88,7 @@ document.addEventListener('keydown', closeModalEsc);
 
 function clickOnLink() {
   refs.modalBackdrop.classList.remove('is-hidden');
+    // document.body.classList.add('modal-open');
   refs.modalConteiner.insertAdjacentHTML('beforeend', teamTpl(team));
   document.body.classList.add('modal-open');
 }

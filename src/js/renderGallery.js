@@ -1,7 +1,7 @@
 import movieItemTpl from '../templates/movieItemTpl.hbs';
 
 import movieItemTplRu from '../templates/movieItemTplRu.hbs';
-import fetchAPI from '../services/movies-api';
+import axiosAPI from '../services/movies-api';
 
 import myError from './customAlert';
 import refs from './refs';

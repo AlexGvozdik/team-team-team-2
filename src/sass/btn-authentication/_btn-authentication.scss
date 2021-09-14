@@ -1,7 +1,7 @@
 .btn-authentication {
   position: absolute;
   top: 170px;
-  left: 50%;
+  left: 23%;
   transform: translate(-50%);
   padding: 5px;
   text-align: center;
@@ -57,15 +57,18 @@
   content: '';
   width: 30px;
   height: 3px;
-  background-color: #4c00fe;
+  background-color: black;
+
 }
 
 .modal__btn:hover .modal__btn_close::before {
   transform: rotate(-130deg);
+    background-color: #ff6b08;
 }
 
 .modal__btn:hover .modal__btn_close::after {
   transform: rotate(130deg);
+  background-color: #ff6b08;
 }
 
 .modal__btn_close::after {
@@ -76,5 +79,5 @@
   content: '';
   width: 30px;
   height: 3px;
-  background-color: #4c00fe;
+  background-color: black;
 }

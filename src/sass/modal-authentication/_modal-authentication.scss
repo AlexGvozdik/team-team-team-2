@@ -1,4 +1,4 @@
-body.modal-open {
+body.modal-open-auth {
   overflow: hidden;
 }
 
@@ -14,7 +14,6 @@ body.modal-open {
   transform: translate(-50%, -50%);
 
   background-color: #fff2fd;
-  // font-size: 16px;
 
   @media screen and (max-width: 319px) {
     width: 272px;
@@ -32,14 +31,12 @@ body.modal-open {
     width: 595px;
     padding: 100px 0;
     min-height: auto;
-    // font-size: 17px;
   }
 
   @media screen and (min-width: 1050px) {
     padding: 180px 0;
     width: 942px;
     min-height: auto;
-    // font-size: 20px;
 
     transform: translate(-50%, -50%) scale(0.7);
   }
@@ -123,14 +120,11 @@ body.modal-open {
   cursor: pointer;
   color: #7c7c7c;
   font-size: 20px;
-
-  // @media screen and(min-width: 1050px) {
-  //   font-size: 30px;
-  // }
 }
 
 .btn-authentication-modal:hover {
-  background-color: black;
+  border-color: #ff6b08;
+  background-color: #ff6b08;
   color: #fff;
 }
 
@@ -158,6 +152,10 @@ body.modal-open {
 
 .greeting-authentication {
   text-align: center;
+  font-size: 15px;
+  @media screen and (min-width: 500px) {
+    font-size: 25px;
+  }
 }
 
 .disabled-btn {

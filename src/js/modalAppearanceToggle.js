@@ -1,5 +1,5 @@
 import refs from "./refs";
-export default function modalAppearanceToggle() {
-  refs.modalBackdrop.classList.toggle('is-hidden');
-  document.body.classList.toggle('modal-open');
+export default function () {
+  refs.modalBackdrop.classList.add('is-hidden');
+  document.body.classList.remove('modal-open');
 }

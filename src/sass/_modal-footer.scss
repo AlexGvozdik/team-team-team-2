@@ -9,7 +9,7 @@
     h2 {
       display: inline-block;
       padding: 10px;
-      border: 2px solid orange;
+      border: 2px solid rgb(247, 128, 18);
     }
   }
 
@@ -24,10 +24,17 @@
     @media screen and (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
-    // Добавить в общие стили
+
     list-style: none;
     margin: 0;
     padding: 0;
+
+    .dev-items:hover,
+    .dev-items:focus {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+        1px 4px 6px rgba(0, 0, 0, 0.16);
+      transform: scale(1.03);
+    }
 
     .dev-items {
       padding: 20px;
@@ -35,6 +42,8 @@
 
       border-radius: 10px;
       box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+
+      transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
       font-size: 16px;
 
@@ -67,5 +76,35 @@
 
   li:not(:last-child) {
     margin-right: 10px;
+  }
+
+  a {
+    display: flex;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  a:hover,
+  a:focus {
+    background-color: rgb(247, 128, 18, 90%);
+    transform: scale(1.2);
+  }
+
+  svg {
+    margin: auto;
+  }
+}
+.card__icon {
+  margin-right: 8px;
+  fill: green;
+  transition: color,fill,border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    fill: blue;
+
   }
 }

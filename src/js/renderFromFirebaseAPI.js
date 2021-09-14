@@ -39,7 +39,7 @@ export async function renderFromFirebaseAPI(key, page) {
     if (document.querySelector('.js-notification-wrapper') === null && page === 1) {
       refs.movieGallerySection.firstElementChild.insertAdjacentHTML(
         'afterbegin',
-        '<div class="js-notification-wrapper"><svg class="notification-cat-icon" width="280" height="280"><use href="./sprite.svg#empty"></use></svg></div>',
+        '<div class="js-notification-wrapper"><svg class="notification-cat-icon" width="280" height="280"><use href="symbol-defs.4fba6ab5.svg#empty"></use></svg></div>',
         );
       }
       return;

@@ -10,6 +10,12 @@
       content="Filmoteka, movie library, film catalog, new films, movie rating, information about films"
     />
     <title>Filmoteka</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#ffc40d" />
+    <meta name="theme-color" content="#ffffff" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
@@ -30,28 +36,21 @@
       rel="stylesheet"
       type="text/css"
     />
-
   </head>
   <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
     <include src="./partials/header.html"></include>
-
     <main class='home-main-bgimage'>
-      <!-- <h1 class="visually-hidden">Movie library</h1> -->
-      <section class="movie-gallery movie-gallery-js" data-page="trending">
-        <div class="container">
-          <ul class="gallery-list list js-gallery-list"></ul>
-        </div>
-        <div class="anchor"></div>
-      </section>
+      <include src="./partials/movie-gallery.html"></include>
+      <include src="./partials/lang-switcher.html"></include>
       <include src="./partials/theme-switcher.html"></include>
       <include src="./partials/up-btn.html"></include>
+      
     </main>
     <include src="./partials/authBtn/authBtn.html"></include>
     <include src="./partials/modal-window-authentication/modal-window-authentication.html"></include>
     <include src="./partials/gallery-card.html"></include>
-    <include src="./partials/footer.html"></include>
     <include src="./partials/modal.html"></include>
+    <include src="./partials/footer.html"></include>
     <include src="./partials/spinner.html"></include>
 
 

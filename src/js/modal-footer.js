@@ -98,10 +98,12 @@ function closeBtn() {
   document.body.classList.remove('modal-open');
 }
 
-function closeModalBackdrop() {
-  refs.modalBackdrop.classList.add('is-hidden');
-  refs.modalConteiner.innerHTML = '';
-  document.body.classList.remove('modal-open');
+function closeModalBackdrop(e) {
+  if (e.target === refs.modalBackdrop) {
+    refs.modalBackdrop.classList.add('is-hidden');
+    refs.modalConteiner.innerHTML = '';
+    document.body.classList.remove('modal-open');
+  }
 }
 
 function closeModalEsc(e) {

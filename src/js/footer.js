@@ -36,7 +36,6 @@
 //   }
 
 const refs = {
-
   showFooter:document.querySelector('.footer-js'),
   header:document.querySelector('.js-header'),
   library:document.querySelector('.js-lib_page'),
@@ -67,33 +66,12 @@ function changeColorFooter () {
 changeColorFooter()
 
 
-toggleSwitch.addEventListener('change', changeColor);
-
-function changeColor(e) {
-  if (e.target.checked) {
-    changeColorFooter ()
-  } else {
-    changeColorFooter ()
-  }
-}
-
-function changeColorFooter () {
-  if(toggleSwitch.checked){
-    refs.showFooter.classList.add('footer-dark')
-  } else {
-    refs.showFooter.classList.remove('footer-dark')
-  }
-}
-
-changeColorFooter()
-
 if (refs.header.classList.contains('header-container_home')) {
 window.addEventListener('scroll', showFooterOnScroll);
 }
 
 refs.library.addEventListener('click', showFooterOnLib);
 refs.home.addEventListener('click', showFooterOnHome);
-refs.queue.addEventListener('click', showFooterOnQueue);
 
 function showFooterOnScroll() {
   
@@ -113,7 +91,5 @@ refs.showFooter.classList.add('footer-library');
 }
 
 function showFooterOnHome() {
-
   refs.showFooter.classList.remove('footer-library');
 }
-

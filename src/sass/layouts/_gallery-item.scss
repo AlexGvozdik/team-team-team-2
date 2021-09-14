@@ -1,6 +1,7 @@
 .movie-gallery {
   padding-top: 20px;
   padding-bottom: 140px; // +100px for footer
+  height: 100vh;
 
   @media screen and (min-width: 768px) {
     padding-top: 10px;

@@ -13,6 +13,7 @@ import './js/langSwitcher';
 import './js/modalClose';
 import './js/footer';
 import './js/modal-footer';
+import './js/onCardClick';
 
 
 // import './js/refs'

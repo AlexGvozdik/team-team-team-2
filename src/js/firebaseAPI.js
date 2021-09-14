@@ -1,5 +1,6 @@
 import axios from 'axios';
 export default {
+    
         
     async addMovieWatched(movieAdded) {
         try {

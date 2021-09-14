@@ -258,6 +258,13 @@ function onOpenModal(id) {
       event.target.classList.toggle('visually-hidden');
       event.target.nextElementSibling.classList.toggle('visually-hidden');
       await firebaseAPI.addMovieWatched(movie)
+
+      const result = await firebaseAPI.getAllWatchedMovies()
+      const movieId = Object.keys(result).reverse()[0]
+      event.target.nextElementSibling.setAttribute('data-id',`${movieId}`)
+      
+
+
     }
 
     document

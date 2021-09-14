@@ -9,7 +9,7 @@ import './js/renderGallery';
 
 import './js/theme-switcher';
 import './js/up-btn';
-
+import './js/langSwitcher';
 
 
 import './js/footer';

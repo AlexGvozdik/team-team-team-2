@@ -16,6 +16,7 @@
 @import './components/modal-close-btn';
 @import './components/up-btn';
 @import './components/theme-switcher';
+@import './components/lang-switcher.scss';
 
 /* ===========LAYOUT============================ */
 @import './layouts/header';
@@ -28,7 +29,7 @@
 @import './layouts/modal-movie';
 // @import './layouts/modal-content';
 @import './layouts/gallery-notification';
-@import './layouts/card-overlay';
+// @import './layouts/card-overlay';
 
 // @import './components//modal-movie';
 // @import './base-styles';

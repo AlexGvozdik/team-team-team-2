@@ -1,53 +1,40 @@
-html,
-html[data-theme='light-theme'] {
-  .home-main-bgimage {
-    background: url(../images/bg-images-library/cinema__light.jpg);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
-html[data-theme='dark-theme'] {
-  .home-main-bgimage {
-    background: url(../images/bg-images-library/cinema__dark.jpg);
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
-.theme-switcher {
+.lang-switcher {
   position: absolute;
-  top: 164px;
+  top: 195px;
   left: 65%;
   @media screen and (min-width: 768px) {
-    top: 90px;
+    top: 130px;
     left: 14%;
   }
   @media screen and (min-width: 1200px) {
-    top: 85px;
+    top: 125px;
     left: 16%;
   }
 }
 
-.theme-switch__input,
-.theme-switch__label {
+.lang-switch__input,
+.lang-switch__label {
   position: absolute;
   z-index: 1;
   cursor: pointer;
 }
 
-.theme-switch__input {
+.lang-switch__input {
   opacity: 0;
 
   &:hover,
   &:focus {
-    + .theme-switch__label {
+    + .lang-switch__label {
       background-color: #e8cfc061;
     }
 
-    + .theme-switch__label span::after {
+    + .lang-switch__label span::after {
       background-color: lighten(#ffffff61, 10%);
     }
   }
 }
 
-.theme-switch__label {
+.lang-switch__label {
   padding: 13px;
   // margin: 60px;
   transition: background-color 0.5s ease-in-out;
@@ -60,21 +47,21 @@ html[data-theme='dark-theme'] {
 
   &::before,
   &::after {
-    font-size: 1.5rem;
+    font-size: 16px;
     position: absolute;
     transform: translate3d(0, -50%, 0);
     top: 50%;
   }
 
   &::before {
-    content: '\263C';
+    content: 'EN';
     right: 100%;
     margin-right: 10px;
     color: #ff6b08;
   }
 
   &::after {
-    content: '\263E';
+    content: 'RU';
     left: 100%;
     margin-left: 10px;
     color: lightSlateGray;
@@ -101,7 +88,7 @@ html[data-theme='dark-theme'] {
   }
 }
 
-.theme-switch__input:checked ~ .theme-switch__label {
+.lang-switch__input:checked ~ .lang-switch__label {
   background-color: lightSlateGray;
 
   &::before {
@@ -109,10 +96,40 @@ html[data-theme='dark-theme'] {
   }
 
   &::after {
-    color: #fff;
+    color: #ff6b08;
   }
 
   .circle::after {
     transform: translate3d(30px, 0, 0);
   }
 }
+
+// .lang-switcher {
+//   position: absolute;
+//   top: 0px;
+//   right: 0;
+//   @media screen and (min-width: 768px) {
+//     top: 0px;
+//     right: 0;
+//   }
+//   @media screen and (min-width: 1200px) {
+//     top: 10px;
+//     right: 200px;
+//   }
+// }
+
+// .lang-list {
+//   display: flex;
+//   list-style: none;
+
+//   .lang:not(:last-child) {
+//     margin-right: 10px;
+//   }
+
+//   .lang {
+//     .lang-link {
+//       color: #fff;
+//       cursor: pointer;
+//     }
+//   }
+// }

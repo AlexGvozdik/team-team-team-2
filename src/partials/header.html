@@ -1,0 +1,52 @@
+
+<header class="header js-header header-container_home">
+  <div class="container">
+
+    <nav class="header-nav js-header-nav">
+      <a class="logo link js-logo" href="">
+        <svg class="logo-icon">
+          <use href="./images/sprite.svg#icon-film"></use>
+        </svg>
+        <span class="logo-text">Filmoteka</span>
+      </a>
+      <ul class="navigation-menu-list list">
+        <li class="navigation-list-link">
+          <a class="link navigation-menu-link current js-home_page" id="home" href="">Home</a>
+        </li>
+        <li class="navigation-list-link">
+          <a class="link navigation-menu-link js-lib_page" href="">My library</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="search">
+      <form class="search-form js-search-form">
+        <input
+          class="search-control js-search-control"
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search movies..."
+        />
+        <button class="search__btn" type="submit">
+          <svg class="search-icon">
+            <use href="./images/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+    <div class="buttons js-buttons visually-hidden">
+      <button
+        class="button_lib btn_watched active-btn js-btn_watched"
+        data-libType="watched"
+        type="button"
+      >
+        Watched
+      </button>
+      <button class="button_lib btn_queue js-btn_queue" type="button" data-libType="queue">
+        Queue
+      </button>
+    </div>
+  </div>
+</header>
+

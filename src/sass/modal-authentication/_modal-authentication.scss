@@ -1,0 +1,187 @@
+body.modal-open-auth {
+  overflow: hidden;
+}
+
+.hero-main {
+  position: relative;
+}
+
+.modal-authentication {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  background-color: #fff2fd;
+
+  @media screen and (max-width: 319px) {
+    width: 272px;
+    padding: 100px 0;
+    min-height: auto;
+  }
+
+  @media screen and (min-width: 320px) {
+    width: 80vw;
+    padding: 100px 0;
+    min-height: auto;
+  }
+
+  @media screen and (min-width: 595px) {
+    width: 595px;
+    padding: 100px 0;
+    min-height: auto;
+  }
+
+  @media screen and (min-width: 1050px) {
+    padding: 180px 0;
+    width: 942px;
+    min-height: auto;
+
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+
+.input-conteiner {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+  padding: 0 20px;
+
+  @media screen and (min-width: 595px) {
+    padding: 0 150px;
+  }
+
+  @media screen and (max-width: 1049px) {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 595px) {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.input-email {
+  margin-bottom: 20px;
+  background-color: transparent;
+
+  border: none;
+  border-bottom: 3px solid black;
+  min-height: 40px;
+}
+
+.input-pass {
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid black;
+  min-height: 40px;
+}
+
+.btn-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+
+  @media screen and (min-width: 595px) {
+    padding: 0 150px;
+  }
+
+  @media screen and (max-width: 1049px) {
+    flex-direction: column;
+    width: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+  }
+}
+
+.btn-list-item {
+  @media screen and (max-width: 1049px) {
+    &:nth-child(1) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media screen and (min-width: 1050px) {
+    &:nth-child(1) {
+      margin-right: 15px;
+    }
+  }
+}
+
+.btn-authentication-modal {
+  width: 140px;
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #7c7c7c;
+  font-size: 20px;
+}
+
+.btn-authentication-modal:hover {
+  border-color: #ff6b08;
+  background-color: #ff6b08;
+  color: #fff;
+}
+
+.authentication-overlay.is--open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.authentication-overlay {
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(32, 13, 29, 0.6);
+  backdrop-filter: blur(3px);
+
+  transition: opacity 250ms linear;
+}
+
+.greeting-authentication {
+  text-align: center;
+  font-size: 15px;
+  @media screen and (min-width: 500px) {
+    font-size: 25px;
+  }
+}
+
+.disabled-btn {
+  display: none;
+}
+
+.btn-action {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.authorization__input {
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-size: 20px;
+  line-height: 1.25;
+
+  @media screen and(max-width: 365px) {
+    font-size: 16px;
+  }
+
+  @media screen and(min-width: 1050px) {
+    font-size: 30px;
+  }
+}

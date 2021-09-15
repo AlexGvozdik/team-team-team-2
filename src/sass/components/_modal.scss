@@ -1,0 +1,27 @@
+.modal {
+  position: absolute;
+  min-width: 280px;
+  width: 75%;
+  height: 958px;
+  max-height: 95vh;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+
+  padding: 48px 20px 40px 20px;
+  background-color: var(--main-white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  @media screen and (min-width: 768px) {
+    width: 618px;
+    height: 562px;
+    padding: 40px 30px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 882px;
+    height: 568px;
+    padding: 50px 30px 40px 30px;
+  }
+}

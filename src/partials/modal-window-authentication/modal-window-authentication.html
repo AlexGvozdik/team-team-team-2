@@ -1,0 +1,35 @@
+<div data-modal-backdrop-authentication id="modal-authentication" class="authentication-overlay">
+  <div class="modal-authentication">
+    <button aria-label="Close modal window" data-modal-window-close-authentication class="modal__btn">
+      <span class="modal__btn_close"></span>
+    </button>
+    <p class="greeting-authentication"></p>
+    <div class="input-conteiner">
+      <input
+        type="email"
+        id="txtEmail"
+        class="input-email authorization__input"
+        placeholder="Email"
+      />
+      <input
+        type="password"
+        id="txtPassword"
+        class="input-pass authorization__input"
+        placeholder="Password"
+      />
+    </div>
+    <ul class="btn-list list">
+      <li class="btn-list-item">
+        <button aria-label="Log in" id="btnLogin" class="btn-authentication-modal btn-action-login">Log IN</button>
+      </li>
+      <li class="btn-list-item">
+        <button aria-label="Sign up" id="btnSignUp" class="btn-authentication-modal btn-secondary">Sign UP</button>
+      </li>
+      <li class="btn-list-item">
+        <button aria-label="Log out" id="btnLogout" class="btn-authentication-modal btn-action disabled-btn">
+          Log OUT
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

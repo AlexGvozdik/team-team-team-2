@@ -1,7 +1,44 @@
-/*
- * Главный файл стилей.
- * Все паршалы подключаются сюда.
- */
+/* ===========UTILS============================ */
+@import './utils/variables';
+@import './utils/is-hidden';
+@import './utils/visually-hidden';
 
-// Стили для файла с примером HTML-фрагмента
-@import './example';
+/* ===========BASE============================ */
+@import './base/common';
+@import './base/container';
+
+/* ===========COMPONENTS============================ */
+@import './btn-authentication/btn-authentication';
+@import './components/backdrop';
+@import './components//modal';
+
+@import './components/button';
+@import './components/modal-close-btn';
+@import './components/up-btn';
+@import './components/theme-switcher';
+@import './components/lang-switcher.scss';
+
+/* ===========LAYOUT============================ */
+@import './layouts/header';
+@import './layouts/gallery-notification';
+@import './layouts/movie-cards';
+@import './layouts/gallery-item';
+@import './layouts/spinner';
+@import './footer';
+@import './_modal-footer';
+
+@import './modal-authentication/modal-authentication';
+@import './layouts/modal-movie';
+// @import './layouts/modal-content';
+@import './layouts/gallery-notification';
+// @import './layouts/card-overlay';
+
+// @import './components//modal-movie';
+// @import './base-styles';
+// @import './modal-footer';
+// @import './layouts/gallery-card';
+// @import './components/modal-close-btn';
+// @import './layouts/modal';
+// @import './layouts/movie-cards';
+
+// @import './layouts/card-overlay';

@@ -1,0 +1,66 @@
+// body.modal-open-preloader{
+//   overflow: hidden;
+// }
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 999;
+  transition: 0.4s all;
+  opacity: 0.8;
+  visibility: visible;
+}
+
+.loader {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  border: 12px solid white;
+  border-radius: 50%;
+  border-top-color: var(--secondary-active-color);
+  border-bottom-color: var(--secondary-active-color);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: 1s spin infinite linear;
+}
+
+.preloader-js {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loader {
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    border: 14px solid white;
+    border-top-color: var(--secondary-active-color);
+    border-bottom-color: var(--secondary-active-color);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .loader {
+    position: absolute;
+    width: 95px;
+    height: 95px;
+    border: 15px solid white;
+    border-top-color: var(--secondary-active-color);
+    border-bottom-color: var(--secondary-active-color);
+  }
+}

@@ -1,0 +1,118 @@
+html,
+html[data-theme='light-theme'] {
+  .home-main-bgimage {
+    background: url(../images/bg-images-library/cinema__light.jpg);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+html[data-theme='dark-theme'] {
+  .home-main-bgimage {
+    background: url(../images/bg-images-library/cinema__dark.jpg);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+.theme-switcher {
+  position: absolute;
+  top: 164px;
+  left: 65%;
+  @media screen and (min-width: 768px) {
+    top: 90px;
+    left: 14%;
+  }
+  @media screen and (min-width: 1200px) {
+    top: 85px;
+    left: 16%;
+  }
+}
+
+.theme-switch__input,
+.theme-switch__label {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.theme-switch__input {
+  opacity: 0;
+
+  &:hover,
+  &:focus {
+    + .theme-switch__label {
+      background-color: #e8cfc061;
+    }
+
+    + .theme-switch__label span::after {
+      background-color: lighten(#ffffff61, 10%);
+    }
+  }
+}
+
+.theme-switch__label {
+  padding: 13px;
+  // margin: 60px;
+  transition: background-color 0.5s ease-in-out;
+  width: 55px;
+  height: 3px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #e8cfc061;
+  box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
+
+  &::before,
+  &::after {
+    font-size: 1.5rem;
+    position: absolute;
+    transform: translate3d(0, -50%, 0);
+    top: 50%;
+  }
+
+  &::before {
+    content: '\263C';
+    right: 100%;
+    margin-right: 10px;
+    color: #ff6b08;
+  }
+
+  &::after {
+    content: '\263E';
+    left: 100%;
+    margin-left: 10px;
+    color: lightSlateGray;
+  }
+
+  .circle {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 30px;
+    width: 100%;
+  }
+
+  .circle::after {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: -25px;
+    width: 16px;
+    height: 16px;
+    content: '';
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.5s, background-color 0.5s;
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.theme-switch__input:checked ~ .theme-switch__label {
+  background-color: lightSlateGray;
+
+  &::before {
+    color: lightSlateGray;
+  }
+
+  &::after {
+    color: #fff;
+  }
+
+  .circle::after {
+    transform: translate3d(30px, 0, 0);
+  }
+}

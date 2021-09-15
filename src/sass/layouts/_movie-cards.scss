@@ -1,0 +1,88 @@
+.moviе-item__img {
+  // border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  @media screen and (min-width: 768px) {
+    height: 406px;
+  }
+}
+
+.moviе-stats__title {
+  font-weight: var(--text-bold);
+  font-size: 12px;
+  line-height: 1.667;
+  text-transform: uppercase;
+}
+
+.moviе-stats {
+  margin-bottom: 5px;
+  padding: 10px;
+
+  &__title {
+    font-weight: var(--text-bold);
+    font-size: 12px;
+    line-height: 1.667;
+    text-transform: uppercase;
+    color: var(--main-black-color);
+  }
+
+  &__info {
+    display: flex;
+  }
+}
+
+.moviе-genre {
+  display: flex;
+  font-weight: var(--text-bold);
+  font-size: 12px;
+  line-height: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-right: 8px;
+
+  color: var(--secondary-active-color);
+
+  &__item {
+    margin-right: 5px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: -3px;
+
+    height: 100%;
+    width: 1px;
+
+    background-color: var(--secondary-active-color);
+  }
+}
+
+.moviе-year {
+  font-weight: var(--text-bold);
+  font-size: 12px;
+  line-height: 16px;
+  margin-right: 8px;
+
+  color: var(--secondary-active-color);
+}
+
+.moviе-vote {
+  font-weight: var(--text-bold);
+  font-size: 12px;
+  line-height: 14px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  color: var(--main-white-color);
+  background-color: var(--main-active-color);
+  padding: 0 10px;
+}

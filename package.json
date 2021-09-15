@@ -12,17 +12,39 @@
     "type": "git",
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
-  "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "keywords": [
+    "Filmoteka",
+    "movie library",
+    "film catalog",
+    "new films",
+    "movie rating",
+    "information about films",
+    "GoIT",
+    "team-project"
+  ],
+  "author": "Alex Gvozdik <hvozdetskyi.alex@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"
   },
   "devDependencies": {
+    "@pnotify/core": "^5.2.0",
+    "@pnotify/mobile": "^5.2.0",
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "posthtml-include": "^1.6.2",
     "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "@firebase/app": "^0.6.27",
+    "@firebase/auth": "^0.16.7",
+    "axios": "^0.21.2",
+    "basiclightbox": "^5.0.4",
+    "email-validator": "^2.0.4",
+    "firebase": "^9.0.1",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "material-ui": "^0.20.2"
   }
 }

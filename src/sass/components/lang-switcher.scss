@@ -1,0 +1,135 @@
+.lang-switcher {
+  position: absolute;
+  top: 195px;
+  left: 65%;
+  @media screen and (min-width: 768px) {
+    top: 130px;
+    left: 14%;
+  }
+  @media screen and (min-width: 1200px) {
+    top: 125px;
+    left: 16%;
+  }
+}
+
+.lang-switch__input,
+.lang-switch__label {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.lang-switch__input {
+  opacity: 0;
+
+  &:hover,
+  &:focus {
+    + .lang-switch__label {
+      background-color: #e8cfc061;
+    }
+
+    + .lang-switch__label span::after {
+      background-color: lighten(#ffffff61, 10%);
+    }
+  }
+}
+
+.lang-switch__label {
+  padding: 13px;
+  // margin: 60px;
+  transition: background-color 0.5s ease-in-out;
+  width: 55px;
+  height: 3px;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #e8cfc061;
+  box-shadow: -4px 4px 15px inset rgba(0, 0, 0, 0.4);
+
+  &::before,
+  &::after {
+    font-size: 16px;
+    position: absolute;
+    transform: translate3d(0, -50%, 0);
+    top: 50%;
+  }
+
+  &::before {
+    content: 'EN';
+    right: 100%;
+    margin-right: 10px;
+    color: #ff6b08;
+  }
+
+  &::after {
+    content: 'RU';
+    left: 100%;
+    margin-left: 10px;
+    color: lightSlateGray;
+  }
+
+  .circle {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 30px;
+    width: 100%;
+  }
+
+  .circle::after {
+    position: absolute;
+    top: calc(100% + 15px);
+    left: -25px;
+    width: 16px;
+    height: 16px;
+    content: '';
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.5s, background-color 0.5s;
+    box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.lang-switch__input:checked ~ .lang-switch__label {
+  background-color: lightSlateGray;
+
+  &::before {
+    color: lightSlateGray;
+  }
+
+  &::after {
+    color: #ff6b08;
+  }
+
+  .circle::after {
+    transform: translate3d(30px, 0, 0);
+  }
+}
+
+// .lang-switcher {
+//   position: absolute;
+//   top: 0px;
+//   right: 0;
+//   @media screen and (min-width: 768px) {
+//     top: 0px;
+//     right: 0;
+//   }
+//   @media screen and (min-width: 1200px) {
+//     top: 10px;
+//     right: 200px;
+//   }
+// }
+
+// .lang-list {
+//   display: flex;
+//   list-style: none;
+
+//   .lang:not(:last-child) {
+//     margin-right: 10px;
+//   }
+
+//   .lang {
+//     .lang-link {
+//       color: #fff;
+//       cursor: pointer;
+//     }
+//   }
+// }

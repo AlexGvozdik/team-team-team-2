@@ -1,0 +1,35 @@
+<div class="team-modal">
+    <div class='dev-team'>
+        <h2>Developer's Team</h2>
+    </div>
+
+    <ul class='dev-list'>
+        {{#each this}}
+        <li class='dev-items'>
+            <img src='{{this.img}}' alt='student'/>
+            <div class='dev-info'>
+            <b class='dev-name'>{{this.name}}</b>
+            <p class='position'>{{this.position}}</p>
+            <ul class='social-link list'>
+                <li class='link-item'>
+
+                    <a href='{{this.githubLink}}' target="_blank">
+
+                        <svg width='22px' height='22px'>
+                            <use href='symbol-defs.4fba6ab5.svg#icon-github'></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class='link-item'>
+                    <a href='{{this.linkedInLink}}' target="_blank">
+                        <svg width='22px' height='22px'>
+                            <use href='symbol-defs.4fba6ab5.svg#icon-linkedin'></use>
+                        </svg>
+                    </a>
+
+                </li>
+            </ul>
+        </li>
+        {{/each}}
+    </ul>
+</div>

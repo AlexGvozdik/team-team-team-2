@@ -1,0 +1,83 @@
+.btn-authentication {
+  position: absolute;
+  top: 170px;
+  left: 23%;
+  transform: translate(-50%);
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: white;
+  border: 2px solid #ff6b08;
+  border-radius: 4px;
+  background-color: #ff6b08;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-authentication {
+    position: absolute;
+    top: 100px;
+    left: 80%;
+    border: 3px solid #ff6b08;
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .btn-authentication {
+    font-size: 15px;
+  }
+}
+
+.btn-authentication:hover {
+  background-color: white;
+  color: #ff6b08;
+}
+
+.modal__btn {
+  position: absolute;
+  display: block;
+  right: 25px;
+  top: 25px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__btn_close::before {
+  transform: rotate(-45deg);
+  transition: transform 300ms linear;
+  position: absolute;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 3px;
+  background-color: black;
+
+}
+
+.modal__btn:hover .modal__btn_close::before {
+  transform: rotate(-130deg);
+    background-color: #ff6b08;
+}
+
+.modal__btn:hover .modal__btn_close::after {
+  transform: rotate(130deg);
+  background-color: #ff6b08;
+}
+
+.modal__btn_close::after {
+  transform: rotate(45deg);
+  transition: transform 300ms linear;
+  position: absolute;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}

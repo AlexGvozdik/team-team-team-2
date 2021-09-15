@@ -5,7 +5,6 @@ import { spinnerMethod } from './spinner';
 
 export async function renderFromFirebaseAPI(key, page) {
   const token = localStorage.getItem('user-token')
-  console.log(token)
   spinnerMethod.addSpinner()
   if (page === 1) {
     refs.galleryList.innerHTML = '';

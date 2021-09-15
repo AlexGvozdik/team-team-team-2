@@ -87,7 +87,7 @@ function successfulLogin() {
     const email = localStorage.getItem('email')
     const modifiedName = email.split('@')[0]
     refs.btnOpenModalAuthentication.textContent = `Hi ${modifiedName}`;
-    refs.greeting.textContent = `Welcome ${modifiedName.toUpperCase()} , do you really wanna `;
+    refs.greeting.textContent = `Welcome ${modifiedName.toUpperCase()} , but if you changed your mind so click this button please `;
 
     refs.btnLogin.classList.add('disabled-btn');
     refs.btnSignUp.classList.add('disabled-btn');

@@ -48,5 +48,6 @@ export default {
   footerRights: document.querySelector('.footer-rights'),
   fooDev: document.querySelector('.foo-dev-js'),
   goItLink: document.querySelector('.goit-link'),
+  btnLogout: document.querySelector('#btnLogout')
 };
 

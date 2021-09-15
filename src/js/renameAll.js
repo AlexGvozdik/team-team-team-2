@@ -13,6 +13,7 @@ export default function renameAll(language) {
     refs.goItLink.textContent = 'студентами GoIT';
     refs.btnActionLogin.textContent = 'Вход';
     refs.btnSecondary.textContent = 'Регистрация';
+    refs.btnLogout.textContent = 'Выйти';
     // refs.btnGalleryItemWatched.textContent = 'Просмотренно'
     // refs.modalBtnWached.textContent = 'Добавить в просмотренные';
     // refs.modalSecondaryTitle.textContent = 'Про фильм';
@@ -29,6 +30,7 @@ export default function renameAll(language) {
     refs.goItLink.textContent = 'by GoIT Students';
     refs.btnActionLogin.textContent = 'Log in';
     refs.btnSecondary.textContent = 'Sing UP';
+    refs.btnLogout.textContent = 'Logout';
     // refs.btnGalleryItemWatched.textContent = 'ADD TO WATCHED'
     // refs.modalBtnWached.textContent = 'add to watched';
     // refs.modalSecondaryTitle.textContent = 'About';

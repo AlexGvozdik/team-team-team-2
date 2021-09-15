@@ -146,4 +146,4 @@ const e={showFooter:document.querySelector(".footer-js"),header:document.querySe
 },{"../templates/teamTpl.hbs":"SXKg"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/spinner"),require("./js/refs"),require("./services/movies-api"),require("./js/headerMenu"),require("./js/renderGallery"),require("./js/onCardClick"),require("./js/infiniteScroll"),require("./js/modal-authentication"),require("./js/theme-switcher"),require("./js/up-btn"),require("./js/langSwitcher"),require("./js/modalClose"),require("./js/footer"),require("./js/modal-footer");
 },{"./sass/main.scss":"clu1","./js/spinner":"Sc1o","./js/refs":"VyiV","./services/movies-api":"B0Cd","./js/headerMenu":"PwQQ","./js/renderGallery":"L4ME","./js/onCardClick":"jZuq","./js/infiniteScroll":"ceWo","./js/modal-authentication":"YVha","./js/theme-switcher":"keXy","./js/up-btn":"e4yY","./js/langSwitcher":"RNrf","./js/modalClose":"BkZ8","./js/footer":"b5Ik","./js/modal-footer":"hhFr"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-team-team-2/src.aefcc2db.js.map
+//# sourceMappingURL=/team-team-team-2/src.6e914fa8.js.map

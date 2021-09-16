@@ -122,6 +122,14 @@
 .modal-item-position:not(:last-child) {
   margin-bottom: 5px;
 }
+@media screen and (min-width: 1024px) {
+  .modal-item-position:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  .modal-item-position:last-child {
+      margin-top: 10px;
+  }
+}
 
 .modal-list-denominations {
   width: auto;
